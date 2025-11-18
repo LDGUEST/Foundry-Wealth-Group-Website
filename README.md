@@ -48,3 +48,10 @@ AUTH0_CLIENT_SECRET=your_auth0_client_secret
 
 This project is configured for deployment on Vercel. Connect your GitHub repository to Vercel for automatic deployments.
 
+## Recent Updates
+
+- Implemented Deep Claret & Silver brand color palette
+- Redesigned all components with premium wealth management aesthetic
+- Added About, Services, and Contact pages
+- Integrated Auth0 authentication and Supabase database
+
