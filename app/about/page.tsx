@@ -22,7 +22,7 @@ export default function About() {
             <div>
               <h2 className="text-3xl font-bold text-charcoal mb-4">Our Mission</h2>
               <p className="text-lg text-charcoal/70 leading-relaxed">
-                Foundry Wealth Group is an independent Registered Investment Advisor dedicated to providing exceptional financial guidance and investment management services. We believe that true wealth management goes beyond investment returns—it's about crafting comprehensive strategies that align with your unique goals, values, and vision for the future.
+                Foundry Wealth Group is an independent Registered Investment Advisor dedicated to providing exceptional financial guidance and investment management services. We believe that true wealth management goes beyond investment returns—it&apos;s about crafting comprehensive strategies that align with your unique goals, values, and vision for the future.
               </p>
             </div>
 
@@ -36,7 +36,7 @@ export default function About() {
             <div>
               <h2 className="text-3xl font-bold text-charcoal mb-4">Fiduciary Commitment</h2>
               <p className="text-lg text-charcoal/70 leading-relaxed">
-                We are bound by fiduciary duty, meaning we are legally obligated to act solely in your best interest. Every recommendation, every strategy, and every decision is made with your financial well-being as the sole priority. This isn't just our legal obligation—it's our fundamental commitment to you.
+                We are bound by fiduciary duty, meaning we are legally obligated to act solely in your best interest. Every recommendation, every strategy, and every decision is made with your financial well-being as the sole priority. This isn&apos;t just our legal obligation—it&apos;s our fundamental commitment to you.
               </p>
             </div>
 
@@ -56,7 +56,7 @@ export default function About() {
             <div>
               <h2 className="text-3xl font-bold text-charcoal mb-4">Why Choose Foundry</h2>
               <p className="text-lg text-charcoal/70 leading-relaxed">
-                We believe in transparency, clear communication, and building long-term relationships based on trust and results. Our clients value our independent perspective, our fiduciary commitment, and our disciplined approach to wealth management. We're not just managing investments—we're helping you forge your financial future.
+                We believe in transparency, clear communication, and building long-term relationships based on trust and results. Our clients value our independent perspective, our fiduciary commitment, and our disciplined approach to wealth management. We&apos;re not just managing investments—we&apos;re helping you forge your financial future.
               </p>
             </div>
           </div>

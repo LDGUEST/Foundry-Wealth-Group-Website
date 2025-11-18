@@ -46,7 +46,7 @@ export default function Contact() {
             <div>
               <h2 className="text-3xl font-bold text-charcoal mb-6">Get in Touch</h2>
               <p className="text-lg text-charcoal/70 mb-8 leading-relaxed">
-                We're here to help you navigate your financial journey. Reach out to schedule a consultation or learn more about our services.
+                We&apos;re here to help you navigate your financial journey. Reach out to schedule a consultation or learn more about our services.
               </p>
               
               <div className="space-y-6">
