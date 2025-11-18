@@ -9,20 +9,26 @@ export default function Logo() {
 
   return (
     <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-      {!imageError && (
-        <div className="relative h-12 w-12 flex-shrink-0">
+      {/* Logo Emblem */}
+      <div className="relative h-12 w-12 flex-shrink-0">
+        {!imageError ? (
           <Image
             src="/foundry-logo.png"
             alt=""
             width={48}
             height={48}
-            className="h-12 w-auto object-contain"
+            className="h-12 w-12 object-contain"
             priority
             onError={() => setImageError(true)}
-            style={{ display: imageError ? 'none' : 'block' }}
           />
-        </div>
-      )}
+        ) : (
+          <div className="h-12 w-12 bg-steel/20 rounded flex items-center justify-center">
+            <span className="text-2xl font-bold text-primary">F</span>
+          </div>
+        )}
+      </div>
+      
+      {/* Text */}
       <div>
         <div className="text-xl font-bold text-charcoal tracking-tight leading-tight">
           FOUNDRY
