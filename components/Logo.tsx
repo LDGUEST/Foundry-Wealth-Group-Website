@@ -7,9 +7,9 @@ export default function Logo() {
       <Image
         src="/foundry-logo.png"
         alt="Foundry Wealth Group"
-        width={200}
-        height={60}
-        className="h-12 w-auto object-contain"
+        width={400}
+        height={120}
+        className="h-24 w-auto object-contain"
         priority
       />
     </Link>
