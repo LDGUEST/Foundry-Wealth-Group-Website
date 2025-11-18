@@ -6,6 +6,7 @@
   --foreground-rgb: 54, 69, 79; /* Charcoal Grey */
   --background-start-rgb: 250, 249, 246; /* Warm Off-White */
   --background-end-rgb: 250, 249, 246; /* Warm Off-White */
+  --primary-color: #7A0026; /* Deep Claret */
 }
 
 body {
