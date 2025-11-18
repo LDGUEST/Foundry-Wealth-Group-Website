@@ -3,6 +3,7 @@
 import { useUser } from '@auth0/nextjs-auth0/client'
 import Link from 'next/link'
 import { useState } from 'react'
+import Logo from './Logo'
 
 export default function Navigation() {
   const { user, isLoading } = useUser()
@@ -14,9 +15,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold text-charcoal tracking-tight hover:text-primary transition-colors">
-              Foundry Wealth Group
-            </Link>
+            <Logo />
           </div>
 
           {/* Desktop Navigation */}
