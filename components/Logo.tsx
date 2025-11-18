@@ -2,16 +2,25 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function Logo() {
   const [imageError, setImageError] = useState(false)
+  const [imageLoaded, setImageLoaded] = useState(false)
+
+  useEffect(() => {
+    // Check if image exists by trying to load it
+    const img = new window.Image()
+    img.onload = () => setImageLoaded(true)
+    img.onerror = () => setImageError(true)
+    img.src = '/foundry-logo.png'
+  }, [])
 
   return (
     <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-      {/* Logo Emblem */}
-      <div className="relative h-12 w-12 flex-shrink-0">
-        {!imageError ? (
+      {/* Logo Emblem - Always show container */}
+      <div className="relative h-12 w-12 flex-shrink-0 flex items-center justify-center">
+        {imageLoaded && !imageError ? (
           <Image
             src="/foundry-logo.png"
             alt=""
@@ -22,8 +31,19 @@ export default function Logo() {
             onError={() => setImageError(true)}
           />
         ) : (
-          <div className="h-12 w-12 bg-steel/20 rounded flex items-center justify-center">
-            <span className="text-2xl font-bold text-primary">F</span>
+          // Fallback: Stylized "F" placeholder matching your brand colors
+          <div className="h-12 w-12 flex items-center justify-center">
+            <div className="relative">
+              {/* 3D F effect */}
+              <div className="text-3xl font-bold text-charcoal" style={{
+                textShadow: `
+                  1px 1px 0px rgba(0,0,0,0.1),
+                  2px 2px 0px rgba(0,0,0,0.05)
+                `
+              }}>
+                F
+              </div>
+            </div>
           </div>
         )}
       </div>
