@@ -15,21 +15,29 @@ export default function Values() {
   ]
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
-          Our Core Values
-        </h2>
-        <div className="grid md:grid-cols-3 gap-8">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+      <div className="max-w-7xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4 tracking-tight">
+            Our Core Values
+          </h2>
+          <p className="text-xl text-charcoal/70 max-w-3xl mx-auto font-light">
+            The principles that guide everything we do
+          </p>
+        </div>
+
+        {/* Values Grid */}
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
           {values.map((value, index) => (
             <div
               key={index}
-              className="bg-slate-50 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+              className="text-center p-8 bg-gradient-to-br from-offwhite to-white rounded-lg border border-steel/20 hover:shadow-lg transition-all duration-300"
             >
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-2xl font-semibold text-charcoal mb-4">
                 {value.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-charcoal/70 leading-relaxed">
                 {value.description}
               </p>
             </div>
@@ -39,4 +47,3 @@ export default function Values() {
     </section>
   )
 }
-

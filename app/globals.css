@@ -3,19 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 255, 255, 255;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 54, 69, 79; /* Charcoal Grey */
+  --background-start-rgb: 250, 249, 246; /* Warm Off-White */
+  --background-end-rgb: 250, 249, 246; /* Warm Off-White */
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #FAF9F6; /* Warm Off-White */
 }
 
 @layer utilities {
