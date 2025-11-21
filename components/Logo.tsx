@@ -9,7 +9,7 @@ export default function Logo() {
         alt="Foundry Wealth Group"
         width={320}
         height={96}
-        className="h-19 w-auto object-contain"
+        className="h-[76px] w-auto object-contain"
         priority
       />
     </Link>
