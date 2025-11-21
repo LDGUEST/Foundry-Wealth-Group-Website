@@ -1,48 +1,66 @@
-export default function Hero() {
+import React from 'react';
+import Link from 'next/link';
+
+const Hero = () => {
   return (
-    <section className="relative bg-gradient-to-b from-offwhite via-white to-offwhite pt-24 pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)',
-          backgroundSize: '48px 48px'
-        }}></div>
-      </div>
-      
-      <div className="relative max-w-7xl mx-auto">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Main Headline */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-charcoal mb-6 tracking-tight leading-tight">
-            Forge Your Financial Future
-          </h1>
-          
-          {/* Subheadline */}
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-light text-charcoal/80 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Independent Wealth Management Built on Fiduciary Excellence
-          </h2>
-          
-          {/* Value Statement */}
-          <p className="text-lg md:text-xl text-charcoal/70 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-            Foundry Wealth Group delivers precision-crafted financial strategies through disciplined investment management and comprehensive planning. As an independent Registered Investment Advisor, we are committed to your long-term success with unwavering fiduciary responsibility and transparent, client-first service.
+    <section className="py-24 text-center">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="inline-block bg-primary/10 text-primary font-semibold px-4 py-2 rounded-full text-sm">
+          ✓ Independent Fiduciary RIA • Series 65 Licensed
+        </div>
+        <h1 className="mt-6 text-4xl md:text-6xl font-bold text-charcoal tracking-tight">
+          Wealth Management for <br />
+          <span className="text-primary">Discerning Investors</span>
+        </h1>
+        <p className="mt-6 text-xl text-charcoal/70 leading-relaxed">
+          Independent financial advisory built on fiduciary excellence and specialized expertise.
+        </p>
+        <div className="mt-8 text-lg text-charcoal/70 leading-relaxed">
+          <p>
+            Foundry Wealth Group delivers institutional-quality investment management and comprehensive financial planning to professionals, executives, and business owners. Experience the clarity of independent advice, free from conflicts of interest.
           </p>
-          
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a
-              href="/contact"
-              className="bg-primary text-white px-8 py-4 rounded-md font-semibold text-base hover:bg-primary-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 min-w-[200px] text-center"
-            >
-              Schedule a Consultation
-            </a>
-            <a
-              href="/services"
-              className="bg-white text-primary px-8 py-4 rounded-md font-semibold text-base border-2 border-primary hover:bg-primary/5 transition-all shadow-md hover:shadow-lg min-w-[200px] text-center"
-            >
-              Explore Our Services
-            </a>
-          </div>
+        </div>
+        <div className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+          <Link href="/contact" passHref>
+            <span className="inline-block w-full sm:w-auto bg-primary text-white px-8 py-4 rounded-md font-semibold text-lg cursor-pointer hover:bg-primary-600 transition-colors duration-300">
+              Schedule Discovery Meeting
+            </span>
+          </Link>
+          <Link href="/process" passHref>
+            <span className="inline-block w-full sm:w-auto bg-transparent border-2 border-primary text-primary px-8 py-4 rounded-md font-semibold text-lg cursor-pointer hover:bg-primary/5 transition-colors duration-300">
+              Learn About Our Approach
+            </span>
+          </Link>
+        </div>
+        <div className="mt-8 sm:hidden">
+          <a href="tel:612-512-7507" className="text-lg font-semibold text-primary">
+            📞 (612) 512-7507
+          </a>
+          <p className="text-xs text-charcoal/50 mt-1">Note: Phone number is a placeholder.</p>
+        </div>
+        <div className="mt-16 max-w-7xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-charcoal/80">
+                <div className="flex items-center justify-center gap-2">
+                    <span className="text-primary">✓</span>
+                    <span>100% Fiduciary</span>
+                </div>
+                <div className="flex items-center justify-center gap-2">
+                    <span className="text-primary">✓</span>
+                    <span>Fee-Only Advisory</span>
+                </div>
+                <div className="flex items-center justify-center gap-2">
+                    <span className="text-primary">✓</span>
+                    <span>Independent RIA</span>
+                </div>
+                <div className="flex items-center justify-center gap-2">
+                    <span className="text-primary">✓</span>
+                    <span>SEC Registered</span>
+                </div>
+            </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
+
+export default Hero;
