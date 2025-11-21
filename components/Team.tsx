@@ -18,11 +18,11 @@ const Team = () => {
             </div>
           </div>
           <div className="md:col-span-3">
-            <h3 className="text-3xl font-bold text-charcoal">Logan Kahnke</h3>
+            <h3 className="text-3xl font-bold text-charcoal">Logan Guest</h3>
             <p className="text-xl text-primary font-semibold">Founder & Investment Advisor Representative</p>
             <div className="mt-6 text-lg text-charcoal/70 leading-relaxed space-y-4">
               <p>
-                With over 3.5 years of experience at Pivotal Wealth & Tax, Logan developed a strong foundation in comprehensive financial planning and investment management. He is dedicated to upholding the fiduciary standard, ensuring that his clients&apos; interests are always placed first.
+                With 2 years as a portfolio manager and advisor, a decade of experience as a trader, 6 years as a market and financial educator, and nearly 9 years in financial operations, Logan has developed a strong foundation in comprehensive financial planning and investment management. He is dedicated to upholding the fiduciary standard, ensuring that his clients&apos; interests are always placed first.
               </p>
               <p>
                 Logan possesses specialized knowledge in the nuclear energy and technology sectors, allowing him to provide unique insights and identify investment opportunities in these complex fields. His expertise is backed by a Series 65 license, which qualifies him as an Investment Advisor Representative.
@@ -38,7 +38,10 @@ const Team = () => {
           <div className="bg-gradient-to-br from-offwhite to-white border border-steel/20 rounded-lg p-8">
             <h4 className="text-2xl font-bold text-charcoal">Professional Background</h4>
             <ul className="mt-4 text-lg text-charcoal/70 leading-relaxed list-disc list-inside space-y-2">
-              <li>Portfolio Manager for 3.5+ years</li>
+              <li>Portfolio Manager & Advisor for 2 years</li>
+              <li>Trader for 10 years</li>
+              <li>Market & Financial Educator for 6 years</li>
+              <li>Financial Operations for nearly 9 years</li>
               <li>Series 65 Licensed Investment Advisor</li>
               <li>Specialized expertise in nuclear & tech sectors</li>
               <li>Experience with institutional-level proposals</li>

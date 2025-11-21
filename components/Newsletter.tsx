@@ -42,7 +42,7 @@ const faqData = [
   {
     question: 'What credentials do you hold?',
     answer:
-      'Our founder, Logan Kahnke, is a Series 65 licensed Investment Advisor Representative. This license is a critical qualification for investment advisers, covering a broad range of topics including laws, regulations, and ethics. This, combined with our fiduciary commitment, ensures we are held to a high professional standard.',
+      'Our founder, Logan Guest, is a Series 65 licensed Investment Advisor Representative. This license is a critical qualification for investment advisers, covering a broad range of topics including laws, regulations, and ethics. This, combined with our fiduciary commitment, ensures we are held to a high professional standard.',
   },
   {
     question: 'How do you handle market downturns?',
