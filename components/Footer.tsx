@@ -27,10 +27,14 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-sm text-steel hover:text-white transition-colors">
+                <ul className="space-y-3">
                   About
                 </Link>
               </li>
+              <li><Link href="/form-adv" className="text-sm text-steel hover:text-white transition-colors">Form ADV</Link></li>
+<li><Link href="/client-relationship-summary" className="text-sm text-steel hover:text-white transition-colors">Client Relationship Summary</Link></li>
+<li><Link href="/privacy-policy" className="text-sm text-steel hover:text-white transition-colors">Privacy Policy</Link></li>
+<li><Link href="/code-of-ethics" className="text-sm text-steel hover:text-white transition-colors">Code of Ethics</Link></li>
               <li>
                 <Link href="/services" className="text-sm text-steel hover:text-white transition-colors">
                   Services
