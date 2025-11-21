@@ -22,10 +22,10 @@ const Team = () => {
             <p className="text-xl text-primary font-semibold">Founder & Investment Advisor Representative</p>
             <div className="mt-6 text-lg text-charcoal/70 leading-relaxed space-y-4">
               <p>
-                With 2 years as a portfolio manager and advisor, a decade of experience as a trader, 6 years as a market and financial educator, and nearly 9 years in financial operations, Logan has developed a strong foundation in comprehensive financial planning and investment management. He is dedicated to upholding the fiduciary standard, ensuring that his clients&apos; interests are always placed first.
+                With 2 years as a portfolio manager and advisor, a decade of experience as a trader, 6 years as a market and financial educator, and nearly 9 years in financial operations, Logan has built a comprehensive skill set that spans the breadth of financial services.
               </p>
               <p>
-                Logan possesses specialized knowledge in the nuclear energy and technology sectors, allowing him to provide unique insights and identify investment opportunities in these complex fields. His expertise is backed by a Series 65 license, which qualifies him as an Investment Advisor Representative.
+                Logan possesses specialized knowledge in the nuclear energy and technology sectors, allowing him to provide unique insights and identify investment opportunities in these complex fields. His expertise is backed by a degree in finance, specializing in financial markets and economic impacts on markets, as well as a Series 65 license, which qualifies him as an Investment Advisor Representative.
               </p>
               <p>
                 His commitment to fiduciary excellence means he operates with full transparency and a singular focus: helping you achieve your financial goals without the conflicts of interest inherent in traditional brokerage models.
