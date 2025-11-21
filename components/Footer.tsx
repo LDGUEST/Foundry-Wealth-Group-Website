@@ -80,6 +80,11 @@ export default function Footer() {
                   Privacy Policy
                 </Link>
               </li>
+              <li>
+  <Link href="/code-of-ethics" className="text-sm text-steel hover:text-white transition-colors">
+    Code of Ethics
+  </Link>
+</li>
             </ul>
           </div>
         </div>
