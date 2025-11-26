@@ -35,7 +35,7 @@ export default function FinancialPlanning() {
                 <p className="text-lg text-charcoal/80 leading-relaxed mb-6">
                   Financial planning is not a one-time event but an ongoing process. We work with you to adapt your
                   plan as your life circumstances change, ensuring you stay on track toward your goals while navigating
-                  life's inevitable transitions.
+                  life&apos;s inevitable transitions.
                 </p>
 
                 <h3 className="text-2xl font-semibold text-charcoal mt-10 mb-4">
@@ -83,7 +83,7 @@ export default function FinancialPlanning() {
                 <div className="bg-offwhite p-6 rounded-lg border border-steel/20 mt-8">
                   <h4 className="text-xl font-semibold text-charcoal mb-3">Why Choose Foundry Wealth Group?</h4>
                   <p className="text-charcoal/70">
-                    As an independent, fee-only fiduciary, we provide unbiased advice that's always in your best interest.
+                    As an independent, fee-only fiduciary, we provide unbiased advice that&apos;s always in your best interest.
                     Our comprehensive approach ensures all aspects of your financial life work together harmoniously to
                     support your goals.
                   </p>

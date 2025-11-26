@@ -27,14 +27,14 @@ export default function TaxStrategies() {
                 </h2>
 
                 <p className="text-lg text-charcoal/80 leading-relaxed mb-6">
-                  Taxes are one of the largest expenses you'll face over your lifetime. Our tax-efficient investment
+                  Taxes are one of the largest expenses you&apos;ll face over your lifetime. Our tax-efficient investment
                   strategies are designed to help minimize your tax burden, allowing you to keep more of what you earn
                   and compound your wealth more effectively over time.
                 </p>
 
                 <p className="text-lg text-charcoal/80 leading-relaxed mb-6">
                   We integrate tax planning into every investment decision, from asset location to rebalancing strategies.
-                  While we don't prepare tax returns, we work closely with your tax professionals to ensure your
+                  While we don&apos;t prepare tax returns, we work closely with your tax professionals to ensure your
                   investment strategy complements your overall tax situation.
                 </p>
 
@@ -81,7 +81,7 @@ export default function TaxStrategies() {
                 </ul>
 
                 <div className="bg-offwhite p-6 rounded-lg border border-steel/20 mt-8">
-                  <h4 className="text-xl font-semibold text-charcoal mb-3">It's Not What You Earn, It's What You Keep</h4>
+                  <h4 className="text-xl font-semibold text-charcoal mb-3">It&apos;s Not What You Earn, It&apos;s What You Keep</h4>
                   <p className="text-charcoal/70">
                     A thoughtful tax strategy can add significant value to your portfolio over time. By minimizing
                     unnecessary taxes, you can compound your wealth more effectively and achieve your financial goals
