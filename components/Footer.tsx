@@ -8,10 +8,10 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <h3 className="text-xl font-bold text-white mb-4">Foundry Wealth Group</h3>
-            <p className="text-steel text-sm leading-relaxed mb-4">
+            <p className="text-steel/90 text-sm leading-relaxed mb-3">
               Independent Registered Investment Advisor
             </p>
-            <p className="text-steel text-sm leading-relaxed">
+            <p className="text-steel/90 text-sm leading-relaxed">
               Series 65 Licensed • Fiduciary Standard
             </p>
           </div>
@@ -21,27 +21,27 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-white mb-4">Navigation</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/" className="text-steel hover:text-white transition-colors text-sm">
+                <Link href="/" className="text-steel/90 hover:text-white transition-colors text-sm block">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-steel hover:text-white transition-colors text-sm">
+                <Link href="/about" className="text-steel/90 hover:text-white transition-colors text-sm block">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/services/financial-planning" className="text-steel hover:text-white transition-colors text-sm">
+                <Link href="/services/financial-planning" className="text-steel/90 hover:text-white transition-colors text-sm block">
                   What We Do
                 </Link>
               </li>
               <li>
-                <Link href="/testimonials" className="text-steel hover:text-white transition-colors text-sm">
+                <Link href="/testimonials" className="text-steel/90 hover:text-white transition-colors text-sm block">
                   Testimonials
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-steel hover:text-white transition-colors text-sm">
+                <Link href="/contact" className="text-steel/90 hover:text-white transition-colors text-sm block">
                   Contact
                 </Link>
               </li>
@@ -55,12 +55,12 @@ export default function Footer() {
               <p className="text-sm">
                 <a
                   href="mailto:info@foundrywealth.group"
-                  className="text-steel hover:text-white transition-colors"
+                  className="text-steel/90 hover:text-white transition-colors"
                 >
                   info@foundrywealth.group
                 </a>
               </p>
-              <p className="text-steel text-sm leading-relaxed">
+              <p className="text-steel/90 text-sm leading-relaxed">
                 Custody provided by<br />
                 Charles Schwab & Anchorage Digital
               </p>
@@ -72,22 +72,22 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-white mb-4">Compliance</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/form-adv" className="text-steel hover:text-white transition-colors text-sm">
+                <Link href="/form-adv" className="text-steel/90 hover:text-white transition-colors text-sm block">
                   Form ADV
                 </Link>
               </li>
               <li>
-                <Link href="/client-relationship-summary" className="text-steel hover:text-white transition-colors text-sm">
+                <Link href="/client-relationship-summary" className="text-steel/90 hover:text-white transition-colors text-sm block">
                   Client Relationship Summary
                 </Link>
               </li>
               <li>
-                <Link href="/privacy-policy" className="text-steel hover:text-white transition-colors text-sm">
+                <Link href="/privacy-policy" className="text-steel/90 hover:text-white transition-colors text-sm block">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/code-of-ethics" className="text-steel hover:text-white transition-colors text-sm">
+                <Link href="/code-of-ethics" className="text-steel/90 hover:text-white transition-colors text-sm block">
                   Code of Ethics
                 </Link>
               </li>
@@ -97,7 +97,7 @@ export default function Footer() {
 
         {/* Disclaimer */}
         <div className="border-t border-steel/30 mt-12 pt-8">
-          <p className="text-steel/80 text-xs leading-relaxed text-center max-w-4xl mx-auto mb-6">
+          <p className="text-steel/90 text-xs leading-relaxed text-center max-w-4xl mx-auto mb-6">
             Investment advisory services offered through Foundry Wealth Group LLC, a registered investment advisor.
             Information presented is for educational purposes only and does not intend to make an offer or solicitation
             for the sale or purchase of any specific securities, investments, or investment strategies. Investments involve
@@ -108,14 +108,14 @@ export default function Footer() {
         {/* Copyright */}
         <div className="border-t border-steel/30 pt-6 mt-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-steel text-sm">
+            <p className="text-steel/90 text-sm">
               &copy; {new Date().getFullYear()} Foundry Wealth Group LLC. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <Link href="/terms" className="text-steel hover:text-white transition-colors text-sm">
+              <Link href="/terms" className="text-steel/90 hover:text-white transition-colors text-sm">
                 Terms of Service
               </Link>
-              <Link href="/privacy" className="text-steel hover:text-white transition-colors text-sm">
+              <Link href="/privacy" className="text-steel/90 hover:text-white transition-colors text-sm">
                 Privacy Policy
               </Link>
             </div>
