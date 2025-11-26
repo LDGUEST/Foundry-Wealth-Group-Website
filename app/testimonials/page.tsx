@@ -45,7 +45,7 @@ export default function Testimonials() {
                 className="bg-gradient-to-br from-offwhite to-white p-8 rounded-lg border border-steel/20 hover:border-primary/30 hover:shadow-xl transition-all duration-300"
               >
                 {/* Quote Icon */}
-                <div className="text-primary text-4xl mb-4">"</div>
+                <div className="text-primary text-4xl mb-4">&ldquo;</div>
 
                 {/* Testimonial Text Placeholder */}
                 <div className="space-y-3 mb-6">
@@ -69,8 +69,8 @@ export default function Testimonials() {
               Building Trust Through Service
             </h2>
             <p className="text-lg text-charcoal/70 leading-relaxed">
-              At Foundry Wealth Group, we're committed to providing exceptional, fiduciary-focused financial guidance
-              to every client. As we grow our practice, we're collecting testimonials from clients who have experienced
+              At Foundry Wealth Group, we&apos;re committed to providing exceptional, fiduciary-focused financial guidance
+              to every client. As we grow our practice, we&apos;re collecting testimonials from clients who have experienced
               the value of independent, objective advice. Check back soon to read their stories.
             </p>
           </div>

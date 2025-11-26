@@ -67,8 +67,8 @@ export default function InvestmentManagement() {
                   <li className="flex items-start">
                     <span className="text-primary mr-3 mt-1 text-xl">•</span>
                     <div>
-                      <strong className="text-charcoal">Performance Reporting & Analysis:</strong>
-                      <span className="text-charcoal/70"> Clear, comprehensive reports on your portfolio's performance and progress.</span>
+                      <strong className="text-charcoal">Performance Reporting &amp; Analysis:</strong>
+                      <span className="text-charcoal/70"> Clear, comprehensive reports on your portfolio&apos;s performance and progress.</span>
                     </div>
                   </li>
                   <li className="flex items-start">

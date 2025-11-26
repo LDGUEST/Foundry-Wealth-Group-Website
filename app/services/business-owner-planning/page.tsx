@@ -33,7 +33,7 @@ export default function BusinessOwnerPlanning() {
                 </p>
 
                 <p className="text-lg text-charcoal/80 leading-relaxed mb-6">
-                  Whether you're building your business, preparing to sell, or planning the transition to the next
+                  Whether you&apos;re building your business, preparing to sell, or planning the transition to the next
                   generation, we help you make strategic decisions that maximize the value of your business while
                   ensuring your personal financial security.
                 </p>
@@ -54,7 +54,7 @@ export default function BusinessOwnerPlanning() {
                     <span className="text-primary mr-3 mt-1 text-xl">•</span>
                     <div>
                       <strong className="text-charcoal">Business Valuation Analysis:</strong>
-                      <span className="text-charcoal/70"> Understand your business's current value and strategies to enhance it.</span>
+                      <span className="text-charcoal/70"> Understand your business&apos;s current value and strategies to enhance it.</span>
                     </div>
                   </li>
                   <li className="flex items-start">
@@ -74,7 +74,7 @@ export default function BusinessOwnerPlanning() {
                   <li className="flex items-start">
                     <span className="text-primary mr-3 mt-1 text-xl">•</span>
                     <div>
-                      <strong className="text-charcoal">Business & Personal Wealth Integration:</strong>
+                      <strong className="text-charcoal">Business &amp; Personal Wealth Integration:</strong>
                       <span className="text-charcoal/70"> Coordinate business decisions with personal financial goals and retirement planning.</span>
                     </div>
                   </li>

@@ -27,7 +27,7 @@ export default function EstatePlanning() {
                 </h2>
 
                 <p className="text-lg text-charcoal/80 leading-relaxed mb-6">
-                  Estate planning is about more than distributing assets—it's about ensuring your wishes are honored,
+                  Estate planning is about more than distributing assets—it&apos;s about ensuring your wishes are honored,
                   your loved ones are cared for, and your legacy is preserved. We work closely with estate attorneys
                   and tax professionals to develop comprehensive strategies that address your unique family situation
                   and financial goals.
@@ -61,7 +61,7 @@ export default function EstatePlanning() {
                   <li className="flex items-start">
                     <span className="text-primary mr-3 mt-1 text-xl">•</span>
                     <div>
-                      <strong className="text-charcoal">Trust & Gifting Strategies:</strong>
+                      <strong className="text-charcoal">Trust &amp; Gifting Strategies:</strong>
                       <span className="text-charcoal/70"> Utilize trusts and lifetime gifts to minimize estate taxes and control asset distribution.</span>
                     </div>
                   </li>
@@ -86,7 +86,7 @@ export default function EstatePlanning() {
                   <p className="text-charcoal/70">
                     For clients with philanthropic goals, we help structure charitable giving strategies that maximize
                     tax benefits while supporting the causes you care about. From donor-advised funds to charitable
-                    trusts, we'll help you create a lasting impact.
+                    trusts, we&apos;ll help you create a lasting impact.
                   </p>
                 </div>
               </div>

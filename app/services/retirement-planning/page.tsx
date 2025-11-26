@@ -27,13 +27,13 @@ export default function RetirementPlanning() {
                 </h2>
 
                 <p className="text-lg text-charcoal/80 leading-relaxed mb-6">
-                  Retirement planning is about more than accumulating assets—it's about creating sustainable income
+                  Retirement planning is about more than accumulating assets—it&apos;s about creating sustainable income
                   streams that support your desired lifestyle for decades to come. We help you develop a comprehensive
                   retirement strategy that addresses income needs, healthcare costs, longevity risk, and legacy goals.
                 </p>
 
                 <p className="text-lg text-charcoal/80 leading-relaxed mb-6">
-                  Whether you're decades from retirement or already enjoying your golden years, we provide guidance
+                  Whether you&apos;re decades from retirement or already enjoying your golden years, we provide guidance
                   on complex decisions like Social Security claiming strategies, pension options, required minimum
                   distributions, and sustainable withdrawal rates.
                 </p>
