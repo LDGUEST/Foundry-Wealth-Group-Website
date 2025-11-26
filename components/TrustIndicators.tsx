@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import { BuildingLibraryIcon, LockClosedIcon, ChartBarIcon } from '@heroicons/react/24/outline';
 
 const TrustIndicators = () => {
