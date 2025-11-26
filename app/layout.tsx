@@ -4,6 +4,7 @@ import './globals.css'
 import Footer from '@/components/Footer'
 import UserProvider from '@/components/UserProvider'
 import Navigation from '@/components/Navigation'
+import ComingSoonBanner from '@/components/ComingSoonBanner'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,6 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <UserProvider>
+          <ComingSoonBanner />
           <Navigation />
           {children}
           <Footer />

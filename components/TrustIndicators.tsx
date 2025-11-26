@@ -46,6 +46,60 @@ const TrustIndicators = () => {
             <h4 className="mt-4 text-xl font-semibold text-charcoal">Transparent Reporting</h4>
           </div>
         </div>
+
+        {/* Custody Statement */}
+        <div className="mt-20 border-t border-steel/20 pt-16">
+          <div className="text-center max-w-4xl mx-auto">
+            <h3 className="text-3xl font-bold text-charcoal mb-8">
+              Institutional-Grade Custody
+            </h3>
+            <p className="text-xl text-charcoal/80 mb-12 leading-relaxed">
+              Custody provided by Charles Schwab & Anchorage Digital
+            </p>
+
+            {/* Custodian Logos */}
+            <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16">
+              {/* Charles Schwab Logo - Replace with actual logo */}
+              <div className="flex flex-col items-center">
+                <div className="bg-white p-6 rounded-lg border border-steel/20 shadow-sm w-48 h-24 flex items-center justify-center">
+                  <span className="text-charcoal font-semibold text-lg">Charles Schwab</span>
+                  {/* TODO: Replace with actual logo image:
+                  <Image
+                    src="/logos/schwab-logo.png"
+                    alt="Charles Schwab"
+                    width={180}
+                    height={60}
+                    className="object-contain"
+                  />
+                  */}
+                </div>
+                <p className="text-sm text-charcoal/60 mt-3">Traditional Assets</p>
+              </div>
+
+              {/* Anchorage Digital Logo - Replace with actual logo */}
+              <div className="flex flex-col items-center">
+                <div className="bg-white p-6 rounded-lg border border-steel/20 shadow-sm w-48 h-24 flex items-center justify-center">
+                  <span className="text-charcoal font-semibold text-lg">Anchorage Digital</span>
+                  {/* TODO: Replace with actual logo image:
+                  <Image
+                    src="/logos/anchorage-logo.png"
+                    alt="Anchorage Digital"
+                    width={180}
+                    height={60}
+                    className="object-contain"
+                  />
+                  */}
+                </div>
+                <p className="text-sm text-charcoal/60 mt-3">Digital Assets</p>
+              </div>
+            </div>
+
+            <p className="text-base text-charcoal/60 mt-10 max-w-2xl mx-auto">
+              Your assets are held with leading financial institutions, providing institutional-grade security,
+              transparency, and regulatory oversight. We never take custody of client assets.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
