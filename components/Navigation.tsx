@@ -26,8 +26,43 @@ export default function Navigation() {
             <Link href="/about" className="text-charcoal hover:text-primary font-medium text-sm transition-colors">
               About
             </Link>
-            <Link href="/services" className="text-charcoal hover:text-primary font-medium text-sm transition-colors">
-              Services
+
+            {/* What We Do Dropdown */}
+            <div className="relative group">
+              <button className="text-charcoal hover:text-primary font-medium text-sm transition-colors flex items-center gap-1">
+                What We Do
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {/* Dropdown Menu */}
+              <div className="absolute left-0 mt-2 w-64 bg-white border border-steel/20 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="py-2">
+                  <Link href="/services/financial-planning" className="block px-4 py-2 text-sm text-charcoal hover:bg-offwhite hover:text-primary transition-colors">
+                    Financial Planning
+                  </Link>
+                  <Link href="/services/investment-management" className="block px-4 py-2 text-sm text-charcoal hover:bg-offwhite hover:text-primary transition-colors">
+                    Investment Management
+                  </Link>
+                  <Link href="/services/retirement-planning" className="block px-4 py-2 text-sm text-charcoal hover:bg-offwhite hover:text-primary transition-colors">
+                    Retirement Planning
+                  </Link>
+                  <Link href="/services/tax-strategies" className="block px-4 py-2 text-sm text-charcoal hover:bg-offwhite hover:text-primary transition-colors">
+                    Tax-Efficient Strategies
+                  </Link>
+                  <Link href="/services/business-owner-planning" className="block px-4 py-2 text-sm text-charcoal hover:bg-offwhite hover:text-primary transition-colors">
+                    Business Owner Planning
+                  </Link>
+                  <Link href="/services/estate-planning" className="block px-4 py-2 text-sm text-charcoal hover:bg-offwhite hover:text-primary transition-colors">
+                    Estate Planning
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <Link href="/testimonials" className="text-charcoal hover:text-primary font-medium text-sm transition-colors">
+              Testimonials
             </Link>
             <Link href="/contact" className="text-charcoal hover:text-primary font-medium text-sm transition-colors">
               Contact
@@ -84,7 +119,19 @@ export default function Navigation() {
             <div className="flex flex-col gap-4">
               <Link href="/" className="text-charcoal hover:text-primary font-medium text-sm">Home</Link>
               <Link href="/about" className="text-charcoal hover:text-primary font-medium text-sm">About</Link>
-              <Link href="/services" className="text-charcoal hover:text-primary font-medium text-sm">Services</Link>
+
+              {/* Mobile What We Do Section */}
+              <div className="flex flex-col gap-2">
+                <span className="text-charcoal font-semibold text-sm">What We Do</span>
+                <Link href="/services/financial-planning" className="text-charcoal hover:text-primary font-medium text-sm pl-4">Financial Planning</Link>
+                <Link href="/services/investment-management" className="text-charcoal hover:text-primary font-medium text-sm pl-4">Investment Management</Link>
+                <Link href="/services/retirement-planning" className="text-charcoal hover:text-primary font-medium text-sm pl-4">Retirement Planning</Link>
+                <Link href="/services/tax-strategies" className="text-charcoal hover:text-primary font-medium text-sm pl-4">Tax-Efficient Strategies</Link>
+                <Link href="/services/business-owner-planning" className="text-charcoal hover:text-primary font-medium text-sm pl-4">Business Owner Planning</Link>
+                <Link href="/services/estate-planning" className="text-charcoal hover:text-primary font-medium text-sm pl-4">Estate Planning</Link>
+              </div>
+
+              <Link href="/testimonials" className="text-charcoal hover:text-primary font-medium text-sm">Testimonials</Link>
               <Link href="/contact" className="text-charcoal hover:text-primary font-medium text-sm">Contact</Link>
               {!isLoading && user && (
                 <Link href="/profile" className="text-charcoal hover:text-primary font-medium text-sm">Profile</Link>
