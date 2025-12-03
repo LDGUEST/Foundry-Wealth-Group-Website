@@ -17,6 +17,9 @@ AUTH0_CLIENT_SECRET='Nv9k8sMRRbfA1ZR--AyugCgLZqmsiG1sOYdHlVpSLuhh-lPP_qMr8qN9x4f
 # Supabase Configuration
 NEXT_PUBLIC_SUPABASE_URL=https://ujsdqgpzlzfqpzeogzxt.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVqc2RxZ3B6bHpmcXB6ZW9nenh0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM0MTA3MjcsImV4cCI6MjA3ODk4NjcyN30.xL82iy-BnbHG6lpvQnuY0UPJdJBVQzhLdGZEUnzv7lw
+
+# Resend Email Configuration
+RESEND_API_KEY=re_HawzDXWU_HwTi4rmvdViAm4YDL7mJXF7H
 ```
 
 ## Vercel Production
@@ -34,6 +37,9 @@ AUTH0_CLIENT_SECRET='Nv9k8sMRRbfA1ZR--AyugCgLZqmsiG1sOYdHlVpSLuhh-lPP_qMr8qN9x4f
 # Supabase Configuration
 NEXT_PUBLIC_SUPABASE_URL=https://ujsdqgpzlzfqpzeogzxt.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVqc2RxZ3B6bHpmcXB6ZW9nenh0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM0MTA3MjcsImV4cCI6MjA3ODk4NjcyN30.xL82iy-BnbHG6lpvQnuY0UPJdJBVQzhLdGZEUnzv7lw
+
+# Resend Email Configuration
+RESEND_API_KEY=re_HawzDXWU_HwTi4rmvdViAm4YDL7mJXF7H
 ```
 
 ## Variable Descriptions
@@ -58,6 +64,13 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzd
   - `https://ujsdqgpzlzfqpzeogzxt.supabase.co`
 - **NEXT_PUBLIC_SUPABASE_ANON_KEY**: Your Supabase anonymous/public API key
   - `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVqc2RxZ3B6bHpmcXB6ZW9nenh0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM0MTA3MjcsImV4cCI6MjA3ODk4NjcyN30.xL82iy-BnbHG6lpvQnuY0UPJdJBVQzhLdGZEUnzv7lw`
+
+### Resend Email Variables
+
+- **RESEND_API_KEY**: Your Resend API key for sending contact form emails
+  - Get from: https://resend.com/api-keys
+  - Contact forms send emails to: `info@foundrywealth.group`
+  - Note: For production, verify your domain in Resend dashboard to use a custom "from" address
 
 ## Important Notes
 
