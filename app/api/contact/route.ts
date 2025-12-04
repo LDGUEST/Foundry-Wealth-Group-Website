@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: 'Foundry Wealth Group Website <onboarding@resend.dev>', // Update this with your verified domain
+      from: 'Foundry Wealth Group Website <noreply@foundrywealth.group>',
       to: ['info@foundrywealth.group'],
       replyTo: email,
       subject: `New Contact Form Submission from ${name}`,
