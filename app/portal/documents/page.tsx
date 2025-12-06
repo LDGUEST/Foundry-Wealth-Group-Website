@@ -22,7 +22,15 @@ export default async function DocumentsPage() {
   }
 
   const auth0Id = session.user.sub;
-  const documents = await getUserDocuments(auth0Id) as Document[];
+  
+  // Handle database errors gracefully
+  let documents: Document[] = [];
+  try {
+    documents = await getUserDocuments(auth0Id) as Document[];
+  } catch (error) {
+    console.error('Database error:', error);
+    // Continue with empty array if database fails
+  }
 
   return (
     <div className="max-w-4xl mx-auto space-y-8">
