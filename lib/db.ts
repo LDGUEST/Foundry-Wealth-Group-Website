@@ -138,8 +138,38 @@ export async function getAllDocuments(filters?: {
   sortBy?: 'uploaded_at' | 'filename' | 'file_size' | 'category';
   sortOrder?: 'ASC' | 'DESC';
 }) {
-  // Build base query with conditional WHERE clauses
-  let baseQuery = sql`
+  // Build query conditionally - Vercel Postgres doesn't support concatenating template literals
+  // So we build the entire query as one template literal with conditional parts
+  
+  const sortBy = filters?.sortBy || 'uploaded_at';
+  const sortOrder = filters?.sortOrder || 'DESC';
+  const validSortColumns = ['uploaded_at', 'filename', 'file_size', 'category'];
+  const sortColumn = validSortColumns.includes(sortBy) ? sortBy : 'uploaded_at';
+  const validSortOrders = ['ASC', 'DESC'];
+  const sortOrderSafe = validSortOrders.includes(sortOrder) ? sortOrder : 'DESC';
+  
+  // Build ORDER BY clause based on sort column
+  let orderByClause;
+  if (sortColumn === 'uploaded_at') {
+    orderByClause = sortOrderSafe === 'ASC' 
+      ? sql`ORDER BY d.uploaded_at ASC`
+      : sql`ORDER BY d.uploaded_at DESC`;
+  } else if (sortColumn === 'filename') {
+    orderByClause = sortOrderSafe === 'ASC'
+      ? sql`ORDER BY d.filename ASC`
+      : sql`ORDER BY d.filename DESC`;
+  } else if (sortColumn === 'file_size') {
+    orderByClause = sortOrderSafe === 'ASC'
+      ? sql`ORDER BY d.file_size ASC`
+      : sql`ORDER BY d.file_size DESC`;
+  } else {
+    orderByClause = sortOrderSafe === 'ASC'
+      ? sql`ORDER BY d.category ASC`
+      : sql`ORDER BY d.category DESC`;
+  }
+
+  // Build the query with all conditions
+  const { rows } = await sql`
     SELECT 
       d.*,
       u.first_name || ' ' || u.last_name as client_name,
@@ -149,75 +179,19 @@ export async function getAllDocuments(filters?: {
     JOIN users u ON d.user_id = u.auth0_id
     LEFT JOIN folders f ON d.folder_id = f.id
     WHERE d.deleted_at IS NULL
+      ${filters?.userId ? sql`AND d.user_id = ${filters.userId}` : sql``}
+      ${filters?.category ? sql`AND d.category = ${filters.category}` : sql``}
+      ${filters?.folderId !== undefined 
+        ? (filters.folderId === null ? sql`AND d.folder_id IS NULL` : sql`AND d.folder_id = ${filters.folderId}`)
+        : sql``}
+      ${filters?.search ? sql`AND (d.filename ILIKE ${`%${filters.search}%`} OR u.first_name || ' ' || u.last_name ILIKE ${`%${filters.search}%`})` : sql``}
+      ${filters?.dateFrom ? sql`AND d.uploaded_at >= ${filters.dateFrom}` : sql``}
+      ${filters?.dateTo ? sql`AND d.uploaded_at <= ${filters.dateTo}` : sql``}
+    ${orderByClause}
+    ${filters?.limit ? sql`LIMIT ${filters.limit}` : sql``}
+    ${filters?.offset ? sql`OFFSET ${filters.offset}` : sql``}
   `;
-
-  // Add conditional filters
-  if (filters?.userId) {
-    baseQuery = sql`${baseQuery} AND d.user_id = ${filters.userId}`;
-  }
-
-  if (filters?.category) {
-    baseQuery = sql`${baseQuery} AND d.category = ${filters.category}`;
-  }
-
-  if (filters?.folderId !== undefined) {
-    if (filters.folderId === null) {
-      baseQuery = sql`${baseQuery} AND d.folder_id IS NULL`;
-    } else {
-      baseQuery = sql`${baseQuery} AND d.folder_id = ${filters.folderId}`;
-    }
-  }
-
-  if (filters?.search) {
-    const searchTerm = `%${filters.search}%`;
-    baseQuery = sql`${baseQuery} AND (d.filename ILIKE ${searchTerm} OR u.first_name || ' ' || u.last_name ILIKE ${searchTerm})`;
-  }
-
-  if (filters?.dateFrom) {
-    baseQuery = sql`${baseQuery} AND d.uploaded_at >= ${filters.dateFrom}`;
-  }
-
-  if (filters?.dateTo) {
-    baseQuery = sql`${baseQuery} AND d.uploaded_at <= ${filters.dateTo}`;
-  }
-
-  // Sorting - validate and use safe values
-  const sortBy = filters?.sortBy || 'uploaded_at';
-  const sortOrder = filters?.sortOrder || 'DESC';
-  const validSortColumns = ['uploaded_at', 'filename', 'file_size', 'category'];
-  const sortColumn = validSortColumns.includes(sortBy) ? sortBy : 'uploaded_at';
-  const validSortOrders = ['ASC', 'DESC'];
-  const sortOrderSafe = validSortOrders.includes(sortOrder) ? sortOrder : 'DESC';
   
-  // Build ORDER BY clause
-  if (sortColumn === 'uploaded_at') {
-    baseQuery = sortOrderSafe === 'ASC' 
-      ? sql`${baseQuery} ORDER BY d.uploaded_at ASC`
-      : sql`${baseQuery} ORDER BY d.uploaded_at DESC`;
-  } else if (sortColumn === 'filename') {
-    baseQuery = sortOrderSafe === 'ASC'
-      ? sql`${baseQuery} ORDER BY d.filename ASC`
-      : sql`${baseQuery} ORDER BY d.filename DESC`;
-  } else if (sortColumn === 'file_size') {
-    baseQuery = sortOrderSafe === 'ASC'
-      ? sql`${baseQuery} ORDER BY d.file_size ASC`
-      : sql`${baseQuery} ORDER BY d.file_size DESC`;
-  } else if (sortColumn === 'category') {
-    baseQuery = sortOrderSafe === 'ASC'
-      ? sql`${baseQuery} ORDER BY d.category ASC`
-      : sql`${baseQuery} ORDER BY d.category DESC`;
-  }
-
-  // Pagination
-  if (filters?.limit) {
-    baseQuery = sql`${baseQuery} LIMIT ${filters.limit}`;
-  }
-
-  if (filters?.offset) {
-    baseQuery = sql`${baseQuery} OFFSET ${filters.offset}`;
-  }
-
-  const { rows } = await baseQuery;
   return rows as DocumentWithUser[];
 }
 
@@ -229,43 +203,21 @@ export async function getDocumentCount(filters?: {
   dateFrom?: string;
   dateTo?: string;
 }) {
-  let baseQuery = sql`
+  const { rows } = await sql`
     SELECT COUNT(*) as count
     FROM documents d
     JOIN users u ON d.user_id = u.auth0_id
     WHERE d.deleted_at IS NULL
+      ${filters?.userId ? sql`AND d.user_id = ${filters.userId}` : sql``}
+      ${filters?.category ? sql`AND d.category = ${filters.category}` : sql``}
+      ${filters?.folderId !== undefined 
+        ? (filters.folderId === null ? sql`AND d.folder_id IS NULL` : sql`AND d.folder_id = ${filters.folderId}`)
+        : sql``}
+      ${filters?.search ? sql`AND (d.filename ILIKE ${`%${filters.search}%`} OR u.first_name || ' ' || u.last_name ILIKE ${`%${filters.search}%`})` : sql``}
+      ${filters?.dateFrom ? sql`AND d.uploaded_at >= ${filters.dateFrom}` : sql``}
+      ${filters?.dateTo ? sql`AND d.uploaded_at <= ${filters.dateTo}` : sql``}
   `;
-
-  if (filters?.userId) {
-    baseQuery = sql`${baseQuery} AND d.user_id = ${filters.userId}`;
-  }
-
-  if (filters?.category) {
-    baseQuery = sql`${baseQuery} AND d.category = ${filters.category}`;
-  }
-
-  if (filters?.folderId !== undefined) {
-    if (filters.folderId === null) {
-      baseQuery = sql`${baseQuery} AND d.folder_id IS NULL`;
-    } else {
-      baseQuery = sql`${baseQuery} AND d.folder_id = ${filters.folderId}`;
-    }
-  }
-
-  if (filters?.search) {
-    const searchTerm = `%${filters.search}%`;
-    baseQuery = sql`${baseQuery} AND (d.filename ILIKE ${searchTerm} OR u.first_name || ' ' || u.last_name ILIKE ${searchTerm})`;
-  }
-
-  if (filters?.dateFrom) {
-    baseQuery = sql`${baseQuery} AND d.uploaded_at >= ${filters.dateFrom}`;
-  }
-
-  if (filters?.dateTo) {
-    baseQuery = sql`${baseQuery} AND d.uploaded_at <= ${filters.dateTo}`;
-  }
-
-  const { rows } = await baseQuery;
+  
   return parseInt(rows[0].count as string);
 }
 
