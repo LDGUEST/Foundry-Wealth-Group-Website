@@ -72,16 +72,6 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-white mb-4">Compliance</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/form-adv" className="text-steel/90 hover:text-white transition-colors text-sm block">
-                  Form ADV
-                </Link>
-              </li>
-              <li>
-                <Link href="/client-relationship-summary" className="text-steel/90 hover:text-white transition-colors text-sm block">
-                  Client Relationship Summary
-                </Link>
-              </li>
-              <li>
                 <Link href="/privacy-policy" className="text-steel/90 hover:text-white transition-colors text-sm block">
                   Privacy Policy
                 </Link>
