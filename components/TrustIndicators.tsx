@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { BuildingLibraryIcon, LockClosedIcon, ChartBarIcon } from '@heroicons/react/24/outline';
 
 const TrustIndicators = () => {
@@ -67,17 +68,37 @@ const TrustIndicators = () => {
               {/* Charles Schwab Logo */}
               <div className="flex flex-col items-center">
                 <div className="bg-white p-8 rounded-lg border border-steel/20 shadow-sm w-64 h-32 flex items-center justify-center">
-                  {/* TODO: Add official Charles Schwab logo to /public/logos/schwab-logo.png */}
-                  <span className="text-charcoal font-semibold text-xl">Charles Schwab</span>
+                  <a 
+                    href="https://advisorservices.schwab.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center"
+                  >
+                    <span className="text-charcoal font-bold text-2xl tracking-tight">
+                      Charles <span className="text-[#4A90E2]">Schwab</span>
+                    </span>
+                  </a>
                 </div>
                 <p className="text-base text-charcoal/70 mt-4 font-medium">Traditional Assets</p>
               </div>
 
               {/* Anchorage Digital Logo */}
               <div className="flex flex-col items-center">
-                <div className="bg-white p-8 rounded-lg border border-steel/20 shadow-sm w-64 h-32 flex items-center justify-center">
-                  {/* TODO: Add official Anchorage Digital logo to /public/logos/anchorage-logo.png */}
-                  <span className="text-charcoal font-semibold text-xl">Anchorage Digital</span>
+                <div className="bg-charcoal p-8 rounded-lg border border-steel/20 shadow-sm w-64 h-32 flex items-center justify-center">
+                  <a 
+                    href="https://www.anchorage.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center w-full h-full"
+                  >
+                    <Image
+                      src="/logos/anchorage-logo.svg"
+                      alt="Anchorage Digital"
+                      width={157}
+                      height={36}
+                      className="object-contain"
+                    />
+                  </a>
                 </div>
                 <p className="text-base text-charcoal/70 mt-4 font-medium">Digital Assets</p>
               </div>
