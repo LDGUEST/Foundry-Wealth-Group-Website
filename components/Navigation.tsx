@@ -24,34 +24,21 @@ export default function Navigation() {
   }, [pathname, setIsMinimized])
 
   // Check if we're in portal
-  const isInPortal = pathname?.startsWith('/portal')
+  const isInPortal = pathname?.startsWith('/portal') || pathname?.startsWith('/admin')
+
+  // Hide navigation completely when in portal (always hidden, Menu button in PortalNav controls it)
+  if (isInPortal) {
+    return null;
+  }
 
   return (
-    <nav className={`border-b border-steel/20 sticky top-0 z-50 bg-white transition-all duration-300 ${isInPortal && isMinimized ? 'h-12' : 'h-auto'}`}>
+    <nav className="border-b border-steel/20 sticky top-0 z-50 bg-white transition-all duration-300 h-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {isInPortal && isMinimized ? (
-          // Minimized view - just Menu button (logo is in PortalNav)
-          <div className="flex justify-between items-center h-12">
-            <div></div>
-            <button
-              onClick={() => setIsMinimized(false)}
-              className="text-charcoal hover:text-primary font-medium text-sm"
-            >
-              Menu
-            </button>
+        <div className="flex justify-between items-center h-20">
+          {/* Logo */}
+          <div className="flex items-center">
+            <Logo />
           </div>
-        ) : (
-          <>
-            <div className="flex justify-between items-center h-20">
-              {/* Logo - shown in main nav when expanded (not minimized) */}
-              {!isMinimized && (
-                <div className="flex items-center">
-                  <Logo />
-                </div>
-              )}
-              {isMinimized && (
-                <div className="w-0"></div>
-              )}
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
@@ -123,7 +110,7 @@ export default function Navigation() {
                       </Link>
                     )}
                     <a
-                      href="/api/auth/logout"
+                      href="/api/auth/logout?returnTo=/"
                       className="text-charcoal hover:text-primary font-medium text-sm transition-colors"
                     >
                       Logout
@@ -155,9 +142,7 @@ export default function Navigation() {
               )}
             </svg>
           </button>
-            </div>
-          </>
-        )}
+        </div>
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
@@ -214,7 +199,7 @@ export default function Navigation() {
                     <Link href="/portal" className="bg-primary text-white px-5 py-2.5 rounded-md hover:bg-primary-700 transition-all text-sm font-medium text-center" onClick={() => setMobileMenuOpen(false)}>
                       Client Portal
                     </Link>
-                    <a href="/api/auth/logout" className="text-charcoal hover:text-primary font-medium text-sm text-center" onClick={() => setMobileMenuOpen(false)}>
+                    <a href="/api/auth/logout?returnTo=/" className="text-charcoal hover:text-primary font-medium text-sm text-center" onClick={() => setMobileMenuOpen(false)}>
                       Logout
                     </a>
                   </>

@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { BuildingLibraryIcon, LockClosedIcon, ChartBarIcon } from '@heroicons/react/24/outline';
+import { BuildingLibraryIcon, LockClosedIcon, BriefcaseIcon } from '@heroicons/react/24/outline';
 
 const TrustIndicators = () => {
   return (
@@ -13,13 +13,13 @@ const TrustIndicators = () => {
         </div>
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center">
           <div className="p-3 md:p-4">
-            <h3 className="text-2xl md:text-3xl font-bold text-primary">&gt;9</h3>
-            <p className="mt-2 text-sm md:text-lg text-charcoal/70 leading-tight">Years Experience</p>
+            <h3 className="text-2xl md:text-3xl font-bold text-primary">Trader</h3>
+            <p className="mt-2 text-sm md:text-lg text-charcoal/70 leading-tight">For Nearly a Decade</p>
             <p className="text-xs md:text-md text-charcoal/60 leading-tight mt-1">Financial Markets & Economic Analysis</p>
           </div>
           <div className="p-3 md:p-4">
             <h3 className="text-2xl md:text-3xl font-bold text-primary">8</h3>
-            <p className="mt-2 text-sm md:text-lg text-charcoal/70 leading-tight">Years in Finance Industry</p>
+            <p className="mt-2 text-sm md:text-lg text-charcoal/70 leading-tight">Years in Financial Industry</p>
             <p className="text-xs md:text-md text-charcoal/60 leading-tight mt-1">Comprehensive Experience</p>
           </div>
           <div className="p-3 md:p-4">
@@ -44,8 +44,8 @@ const TrustIndicators = () => {
             <h4 className="mt-3 md:mt-4 text-base md:text-xl font-semibold text-charcoal leading-tight">Client Privacy</h4>
           </div>
           <div className="p-3 md:p-4 flex flex-col items-center">
-            <ChartBarIcon className="w-10 h-10 md:w-12 md:h-12 text-primary" />
-            <h4 className="mt-3 md:mt-4 text-base md:text-xl font-semibold text-charcoal leading-tight">Transparent Reporting</h4>
+            <BriefcaseIcon className="w-10 h-10 md:w-12 md:h-12 text-primary" />
+            <h4 className="mt-3 md:mt-4 text-base md:text-xl font-semibold text-charcoal leading-tight">4 Years Business Consulting</h4>
           </div>
           <div className="p-3 md:p-4 flex flex-col items-center">
             <BuildingLibraryIcon className="w-10 h-10 md:w-12 md:h-12 text-primary" />

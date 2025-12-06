@@ -1,4 +1,10 @@
+'use client';
+
+import { useState } from 'react';
+
 export default function WhoWeServe() {
+  const [isExpanded, setIsExpanded] = useState(false);
+  
   const clientTypes = [
     {
       title: 'Professionals & Executives',
@@ -23,16 +29,29 @@ export default function WhoWeServe() {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4 tracking-tight">
-            Who We Serve
-          </h2>
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="flex items-center justify-center gap-3 mx-auto group md:cursor-default"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4 tracking-tight">
+              Who We Serve
+            </h2>
+            <span className="text-3xl text-primary transition-transform duration-300 group-hover:scale-110 md:hidden">
+              {isExpanded ? '−' : '+'}
+            </span>
+          </button>
           <p className="text-xl text-charcoal/70 max-w-3xl mx-auto font-light">
             We work with discerning clients who value independent, fiduciary-focused wealth management
           </p>
         </div>
 
-        {/* Client Grid */}
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+        {/* Client Grid - Collapsible on mobile, always visible on desktop */}
+        <div
+          className={`transition-all duration-500 ease-in-out ${
+            isExpanded ? 'max-h-[5000px] opacity-100' : 'max-h-0 opacity-0 md:max-h-[5000px] md:opacity-100'
+          } overflow-hidden`}
+        >
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
           {clientTypes.map((client, index) => (
             <div
               key={index}
@@ -46,16 +65,17 @@ export default function WhoWeServe() {
               </p>
             </div>
           ))}
-        </div>
+          </div>
 
-        {/* CTA */}
-        <div className="mt-16 text-center">
+          {/* CTA */}
+          <div className="mt-16 text-center">
           <a
             href="/contact"
             className="inline-block bg-primary text-white px-8 py-4 rounded-md font-semibold text-base hover:bg-primary-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
           >
             Connect with an Advisor
           </a>
+          </div>
         </div>
       </div>
     </section>

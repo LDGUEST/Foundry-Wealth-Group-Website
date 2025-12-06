@@ -1,4 +1,10 @@
+'use client';
+
+import { useState } from 'react';
+
 export default function Services() {
+  const [isExpanded, setIsExpanded] = useState(false);
+  
   const services = [
     {
       title: 'Financial Planning',
@@ -37,16 +43,29 @@ export default function Services() {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4 tracking-tight">
-            Our Services
-          </h2>
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="flex items-center justify-center gap-3 mx-auto group md:cursor-default"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4 tracking-tight">
+              Our Services
+            </h2>
+            <span className="text-3xl text-primary transition-transform duration-300 group-hover:scale-110 md:hidden">
+              {isExpanded ? '−' : '+'}
+            </span>
+          </button>
           <p className="text-xl text-charcoal/70 max-w-3xl mx-auto font-light">
             Comprehensive wealth management solutions tailored to your unique needs
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Services Grid - Collapsible on mobile, always visible on desktop */}
+        <div
+          className={`transition-all duration-500 ease-in-out ${
+            isExpanded ? 'max-h-[5000px] opacity-100' : 'max-h-0 opacity-0 md:max-h-[5000px] md:opacity-100'
+          } overflow-hidden`}
+        >
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div
               key={index}
@@ -61,16 +80,17 @@ export default function Services() {
               </p>
             </div>
           ))}
-        </div>
+          </div>
 
-        {/* CTA */}
-        <div className="mt-16 text-center">
+          {/* CTA */}
+          <div className="mt-16 text-center">
           <a
             href="/services"
             className="inline-block text-primary font-semibold text-base hover:text-primary-700 transition-colors"
           >
             Learn More About Our Services →
           </a>
+          </div>
         </div>
       </div>
     </section>

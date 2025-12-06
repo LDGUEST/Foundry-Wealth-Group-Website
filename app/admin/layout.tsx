@@ -48,6 +48,12 @@ export default async function AdminLayout({
                 >
                   Clients
                 </Link>
+                <Link 
+                  href="/admin/documents" 
+                  className="text-sm font-medium text-[#36454F] hover:text-[#7A0026]"
+                >
+                  Documents
+                </Link>
               </div>
             </div>
 
@@ -59,7 +65,7 @@ export default async function AdminLayout({
                 ← Back to Portal
               </Link>
               <a
-                href="/api/auth/logout"
+                href="/api/auth/logout?returnTo=/"
                 className="text-sm text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md hover:bg-gray-100"
               >
                 Sign Out
