@@ -28,8 +28,15 @@ export function PortalNav() {
             <div className="hidden md:flex gap-6">
               {navItems.map(item => {
                 const Icon = item.icon;
-                const isActive = pathname === item.href || 
-                  (item.href === '/portal' && pathname.startsWith('/portal/forms'));
+                let isActive = false;
+                
+                if (item.href === '/portal') {
+                  // Dashboard is only active on exact match
+                  isActive = pathname === '/portal';
+                } else {
+                  // Other items are active if pathname starts with their href
+                  isActive = pathname.startsWith(item.href);
+                }
                 
                 return (
                   <Link
