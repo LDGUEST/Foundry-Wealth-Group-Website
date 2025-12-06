@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Footer from '@/components/Footer'
 import UserProvider from '@/components/UserProvider'
+import { NavProvider } from '@/contexts/NavContext'
 import Navigation from '@/components/Navigation'
 import ComingSoonBanner from '@/components/ComingSoonBanner'
 
@@ -23,10 +24,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <UserProvider>
-          <ComingSoonBanner />
-          <Navigation />
-          {children}
-          <Footer />
+          <NavProvider>
+            <ComingSoonBanner />
+            <Navigation />
+            {children}
+            <Footer />
+          </NavProvider>
         </UserProvider>
       </body>
     </html>

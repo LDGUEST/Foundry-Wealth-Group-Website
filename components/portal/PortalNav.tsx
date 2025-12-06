@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useUser } from '@auth0/nextjs-auth0/client';
 import { FileText, Upload, User, Home } from 'lucide-react';
+import { useNav } from '@/contexts/NavContext';
 import Logo from '@/components/Logo';
 
 const navItems = [
@@ -16,15 +17,22 @@ const navItems = [
 export function PortalNav() {
   const pathname = usePathname();
   const { user } = useUser();
-  
+  const { isMinimized } = useNav();
+
   return (
     <nav className="bg-white border-b border-gray-200">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-8">
-            <Link href="/portal" className="flex items-center">
-              <Logo />
-            </Link>
+            {/* Show logo in portal nav when main nav is minimized */}
+            {isMinimized && (
+              <Link href="/portal" className="flex items-center">
+                <Logo />
+              </Link>
+            )}
+            {!isMinimized && (
+              <div className="w-0"></div>
+            )}
             
             <div className="hidden md:flex gap-6">
               {navItems.map(item => {

@@ -3,7 +3,8 @@
 import { useUser } from '@auth0/nextjs-auth0/client'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useNav } from '@/contexts/NavContext'
 import Logo from './Logo'
 
 export default function Navigation() {
@@ -11,7 +12,16 @@ export default function Navigation() {
   const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [whatWeDoOpen, setWhatWeDoOpen] = useState(false)
-  const [isMinimized, setIsMinimized] = useState(pathname?.startsWith('/portal') || false)
+  const { isMinimized, setIsMinimized } = useNav()
+  
+  // Auto-minimize when entering portal
+  useEffect(() => {
+    if (pathname?.startsWith('/portal')) {
+      setIsMinimized(true)
+    } else {
+      setIsMinimized(false)
+    }
+  }, [pathname, setIsMinimized])
 
   // Check if we're in portal
   const isInPortal = pathname?.startsWith('/portal')
@@ -33,12 +43,13 @@ export default function Navigation() {
         ) : (
           <>
             <div className="flex justify-between items-center h-20">
-              {/* Logo - hidden when in portal (shown in PortalNav instead) */}
-              {!isInPortal ? (
+              {/* Logo - shown in main nav when expanded (not minimized) */}
+              {!isMinimized && (
                 <div className="flex items-center">
                   <Logo />
                 </div>
-              ) : (
+              )}
+              {isMinimized && (
                 <div className="w-0"></div>
               )}
 
