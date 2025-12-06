@@ -197,7 +197,7 @@ export function FolderSidebar({
           )}
         </div>
         
-        {isExpanded && folder.children.map(child => renderFolder(child, level + 1))}
+        {isExpanded && folder.children.map(child => renderFolder(child as Folder & { children: Folder[] }, level + 1))}
       </div>
     );
   }

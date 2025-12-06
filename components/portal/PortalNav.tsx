@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useUser } from '@auth0/nextjs-auth0/client';
@@ -20,7 +20,7 @@ export function PortalNav() {
   const [showMainNav, setShowMainNav] = useState(false);
 
   return (
-    <>
+    <div>
       {/* Main Navigation - shown when Menu button is clicked */}
       {showMainNav && (
         <nav className="border-b border-steel/20 bg-white sticky top-0 z-50">
@@ -93,61 +93,62 @@ export function PortalNav() {
               <Link href="/portal" className="flex items-center">
                 <Logo />
               </Link>
-            
-            <div className="hidden md:flex gap-6">
-              {navItems.map(item => {
-                const Icon = item.icon;
-                let isActive = false;
-                
-                if (item.href === '/portal') {
-                  // Dashboard is only active on exact match
-                  isActive = pathname === '/portal';
-                } else {
-                  // Other items are active if pathname starts with their href
-                  isActive = pathname.startsWith(item.href);
-                }
-                
-                return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition ${
-                      isActive
-                        ? 'bg-[#7A0026] text-white'
-                        : 'text-[#36454F] hover:bg-gray-100'
-                    }`}
-                  >
-                    <Icon size={16} />
-                    {item.label}
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2 md:gap-4">
-            {user && (
-              <div className="hidden sm:block text-sm text-gray-600 truncate max-w-[150px] md:max-w-none">
-                {user.name || user.email}
+              
+              <div className="hidden md:flex gap-6">
+                {navItems.map(item => {
+                  const Icon = item.icon;
+                  let isActive = false;
+                  
+                  if (item.href === '/portal') {
+                    // Dashboard is only active on exact match
+                    isActive = pathname === '/portal';
+                  } else {
+                    // Other items are active if pathname starts with their href
+                    isActive = pathname.startsWith(item.href);
+                  }
+                  
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition ${
+                        isActive
+                          ? 'bg-[#7A0026] text-white'
+                          : 'text-[#36454F] hover:bg-gray-100'
+                      }`}
+                    >
+                      <Icon size={16} />
+                      {item.label}
+                    </Link>
+                  );
+                })}
               </div>
-            )}
-            <button
-              onClick={() => setShowMainNav(!showMainNav)}
-              className="bg-[#7A0026] text-white px-4 py-2 rounded-md font-medium text-sm hover:bg-[#7A0026]/90 transition-colors whitespace-nowrap flex items-center gap-2"
-            >
-              <Menu size={16} />
-              Menu
-            </button>
-            <a
-              href="/api/auth/logout?returnTo=/"
-              className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md hover:bg-gray-100 text-sm font-medium transition-colors"
-            >
-              Sign Out
-            </a>
+            </div>
+
+            <div className="flex items-center gap-2 md:gap-4">
+              {user && (
+                <div className="hidden sm:block text-sm text-gray-600 truncate max-w-[150px] md:max-w-none">
+                  {user.name || user.email}
+                </div>
+              )}
+              <button
+                onClick={() => setShowMainNav(!showMainNav)}
+                className="bg-[#7A0026] text-white px-4 py-2 rounded-md font-medium text-sm hover:bg-[#7A0026]/90 transition-colors whitespace-nowrap flex items-center gap-2"
+              >
+                <Menu size={16} />
+                Menu
+              </button>
+              <a
+                href="/api/auth/logout?returnTo=/"
+                className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md hover:bg-gray-100 text-sm font-medium transition-colors"
+              >
+                Sign Out
+              </a>
+            </div>
           </div>
         </div>
       </nav>
-    </>
+    </div>
   );
 }
 
