@@ -8,6 +8,7 @@ import Logo from './Logo'
 export default function Navigation() {
   const { user, isLoading } = useUser()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [whatWeDoOpen, setWhatWeDoOpen] = useState(false)
 
   return (
     <nav className="border-b border-steel/20 sticky top-0 z-50 bg-white">
@@ -117,34 +118,63 @@ export default function Navigation() {
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-steel/20">
             <div className="flex flex-col gap-4">
-              <Link href="/" className="text-charcoal hover:text-primary font-medium text-sm">Home</Link>
-              <Link href="/about" className="text-charcoal hover:text-primary font-medium text-sm">About</Link>
+              <Link href="/" className="text-charcoal hover:text-primary font-medium text-sm" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+              <Link href="/about" className="text-charcoal hover:text-primary font-medium text-sm" onClick={() => setMobileMenuOpen(false)}>About</Link>
 
-              {/* Mobile What We Do Section */}
-              <div className="flex flex-col gap-2">
-                <span className="text-charcoal font-semibold text-sm">What We Do</span>
-                <Link href="/services/financial-planning" className="text-charcoal hover:text-primary font-medium text-sm pl-4">Financial Planning</Link>
-                <Link href="/services/investment-management" className="text-charcoal hover:text-primary font-medium text-sm pl-4">Investment Management</Link>
-                <Link href="/services/retirement-planning" className="text-charcoal hover:text-primary font-medium text-sm pl-4">Retirement Planning</Link>
-                <Link href="/services/tax-strategies" className="text-charcoal hover:text-primary font-medium text-sm pl-4">Tax-Efficient Strategies</Link>
-                <Link href="/services/business-owner-planning" className="text-charcoal hover:text-primary font-medium text-sm pl-4">Business Owner Planning</Link>
-                <Link href="/services/estate-planning" className="text-charcoal hover:text-primary font-medium text-sm pl-4">Estate Planning</Link>
+              {/* Mobile What We Do Dropdown */}
+              <div className="flex flex-col">
+                <button
+                  onClick={() => setWhatWeDoOpen(!whatWeDoOpen)}
+                  className="text-charcoal hover:text-primary font-semibold text-sm flex items-center justify-between"
+                >
+                  <span>What We Do</span>
+                  <svg
+                    className={`w-4 h-4 transition-transform ${whatWeDoOpen ? 'rotate-180' : ''}`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {whatWeDoOpen && (
+                  <div className="flex flex-col gap-2 mt-2 pl-4">
+                    <Link href="/services/financial-planning" className="text-charcoal hover:text-primary font-medium text-sm" onClick={() => setMobileMenuOpen(false)}>Financial Planning</Link>
+                    <Link href="/services/investment-management" className="text-charcoal hover:text-primary font-medium text-sm" onClick={() => setMobileMenuOpen(false)}>Investment Management</Link>
+                    <Link href="/services/retirement-planning" className="text-charcoal hover:text-primary font-medium text-sm" onClick={() => setMobileMenuOpen(false)}>Retirement Planning</Link>
+                    <Link href="/services/tax-strategies" className="text-charcoal hover:text-primary font-medium text-sm" onClick={() => setMobileMenuOpen(false)}>Tax-Efficient Strategies</Link>
+                    <Link href="/services/business-owner-planning" className="text-charcoal hover:text-primary font-medium text-sm" onClick={() => setMobileMenuOpen(false)}>Business Owner Planning</Link>
+                    <Link href="/services/estate-planning" className="text-charcoal hover:text-primary font-medium text-sm" onClick={() => setMobileMenuOpen(false)}>Estate Planning</Link>
+                  </div>
+                )}
               </div>
 
-              <Link href="/testimonials" className="text-charcoal hover:text-primary font-medium text-sm">Testimonials</Link>
-              <Link href="/contact" className="text-charcoal hover:text-primary font-medium text-sm">Contact</Link>
+              <Link href="/testimonials" className="text-charcoal hover:text-primary font-medium text-sm" onClick={() => setMobileMenuOpen(false)}>Testimonials</Link>
+              <Link href="/contact" className="text-charcoal hover:text-primary font-medium text-sm" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+              
+              {/* Schedule Button */}
+              <a
+                href="https://urlgeni.us/excel/Foundry"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-primary text-white px-5 py-2.5 rounded-md hover:bg-primary-700 transition-all text-sm font-medium text-center"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Schedule
+              </a>
+
               {!isLoading && (
                 user ? (
                   <>
-                    <Link href="/portal" className="bg-primary text-white px-5 py-2.5 rounded-md hover:bg-primary-700 transition-all text-sm font-medium text-center">
+                    <Link href="/portal" className="bg-primary text-white px-5 py-2.5 rounded-md hover:bg-primary-700 transition-all text-sm font-medium text-center" onClick={() => setMobileMenuOpen(false)}>
                       Client Portal
                     </Link>
-                    <a href="/api/auth/logout" className="text-charcoal hover:text-primary font-medium text-sm text-center">
+                    <a href="/api/auth/logout" className="text-charcoal hover:text-primary font-medium text-sm text-center" onClick={() => setMobileMenuOpen(false)}>
                       Logout
                     </a>
                   </>
                 ) : (
-                  <a href="/api/auth/login" className="bg-primary text-white px-5 py-2.5 rounded-md hover:bg-primary-700 transition-all text-sm font-medium text-center">
+                  <a href="/api/auth/login" className="bg-primary text-white px-5 py-2.5 rounded-md hover:bg-primary-700 transition-all text-sm font-medium text-center" onClick={() => setMobileMenuOpen(false)}>
                     Client Portal
                   </a>
                 )
