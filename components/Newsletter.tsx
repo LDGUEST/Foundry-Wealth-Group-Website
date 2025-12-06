@@ -180,7 +180,7 @@ const FaqItem = ({ item, isOpen, onClick }: FaqItemProps) => (
 
 const FAQ = () => {
   // START: State initialization (using types)
-  const [isSectionOpen, setIsSectionOpen] = useState(true);
+  const [isSectionOpen, setIsSectionOpen] = useState(false);
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const handleClick = (index: number) => {
