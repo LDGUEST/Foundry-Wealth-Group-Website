@@ -1,9 +1,11 @@
 import ContactCTA from '@/components/ContactCTA'
+import Link from 'next/link'
 
 export default function Services() {
   const services = [
     {
       title: 'Financial Planning',
+      href: '/services/financial-planning',
       description: 'Comprehensive analysis of your financial situation, goals, and objectives. We develop customized strategies covering cash flow, debt management, insurance, estate planning, and education funding to create a roadmap for your financial future.',
       details: [
         'Cash flow analysis and budgeting',
@@ -15,6 +17,7 @@ export default function Services() {
     },
     {
       title: 'Investment Management',
+      href: '/services/investment-management',
       description: 'Evidence-based portfolio construction and ongoing management designed to align with your risk tolerance and long-term objectives. We utilize diversified, low-cost investment strategies with regular rebalancing and performance monitoring.',
       details: [
         'Portfolio construction and asset allocation',
@@ -26,6 +29,7 @@ export default function Services() {
     },
     {
       title: 'Retirement Planning',
+      href: '/services/retirement-planning',
       description: 'Strategic planning to ensure you can retire on your terms. We analyze retirement income needs, optimize Social Security claiming strategies, manage required minimum distributions, and develop withdrawal strategies to sustain your lifestyle throughout retirement.',
       details: [
         'Retirement income analysis',
@@ -37,6 +41,7 @@ export default function Services() {
     },
     {
       title: 'Tax-Efficient Strategies',
+      href: '/services/tax-strategies',
       description: 'Integration of tax planning into your investment and financial decisions. We focus on asset location, tax-loss harvesting, qualified account optimization, and coordination with your tax professionals to minimize your overall tax burden.',
       details: [
         'Asset location optimization',
@@ -48,6 +53,7 @@ export default function Services() {
     },
     {
       title: 'Business Owner Planning',
+      href: '/services/business-owner-planning',
       description: 'Specialized guidance for business owners including succession planning, business valuation, key person insurance, buy-sell agreements, and strategies to optimize business value while planning for personal financial security.',
       details: [
         'Business succession planning',
@@ -59,6 +65,7 @@ export default function Services() {
     },
     {
       title: 'Estate Planning',
+      href: '/services/estate-planning',
       description: 'Comprehensive estate planning strategies to preserve and transfer wealth efficiently. We coordinate with estate attorneys and tax professionals to develop plans that align with your family\'s goals and minimize transfer taxes.',
       details: [
         'Estate planning coordination',
@@ -89,11 +96,12 @@ export default function Services() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
             {services.map((service, index) => (
-              <div
+              <Link
                 key={index}
-                className="bg-gradient-to-br from-offwhite to-white p-10 rounded-lg border border-steel/20 hover:border-primary/30 hover:shadow-xl transition-all duration-300"
+                href={service.href}
+                className="bg-gradient-to-br from-offwhite to-white p-10 rounded-lg border border-steel/20 hover:border-primary/30 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer block"
               >
-                <h2 className="text-3xl font-bold text-charcoal mb-4">{service.title}</h2>
+                <h2 className="text-3xl font-bold text-charcoal mb-4 hover:text-primary transition-colors">{service.title}</h2>
                 <p className="text-lg text-charcoal/70 mb-6 leading-relaxed">
                   {service.description}
                 </p>
@@ -105,7 +113,10 @@ export default function Services() {
                     </li>
                   ))}
                 </ul>
-              </div>
+                <div className="mt-6 text-primary font-semibold text-sm">
+                  Learn more →
+                </div>
+              </Link>
             ))}
           </div>
         </div>
