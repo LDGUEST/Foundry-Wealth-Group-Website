@@ -184,7 +184,7 @@ export default function Navigation() {
               
               {/* Schedule Button */}
               <a
-                href="https://urlgeni.us/excel/Foundry"
+                href="https://outlook.office.com/book/LoganGuest@foundrywealth.group/?ismsaljsauthenabled"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-primary text-white px-5 py-2.5 rounded-md hover:bg-primary-700 transition-all text-sm font-medium text-center"

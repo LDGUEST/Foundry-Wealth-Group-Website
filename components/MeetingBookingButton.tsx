@@ -18,7 +18,7 @@ export default function MeetingBookingButton({
 }: MeetingBookingButtonProps) {
   const [isHovered, setIsHovered] = useState(false)
 
-  const bookingUrl = 'https://urlgeni.us/excel/Foundry'
+  const bookingUrl = 'https://outlook.office.com/book/LoganGuest@foundrywealth.group/?ismsaljsauthenabled'
 
   // Size classes
   const sizeClasses = {

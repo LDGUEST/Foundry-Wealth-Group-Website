@@ -112,7 +112,7 @@ export default async function PortalDashboard() {
               Schedule a call with your advisor
             </p>
             <Button variant="outline" asChild>
-              <Link href="https://urlgeni.us/excel/Foundry" target="_blank">
+              <Link href="https://outlook.office.com/book/LoganGuest@foundrywealth.group/?ismsaljsauthenabled" target="_blank">
                 Schedule Call
               </Link>
             </Button>
