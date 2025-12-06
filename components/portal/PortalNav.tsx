@@ -68,12 +68,6 @@ export function PortalNav() {
             >
               Home
             </Link>
-            <a
-              href="/api/auth/logout"
-              className="text-sm text-gray-600 hover:text-gray-900 px-2 md:px-3 py-2 rounded-md hover:bg-gray-100 whitespace-nowrap"
-            >
-              Sign Out
-            </a>
           </div>
         </div>
       </div>

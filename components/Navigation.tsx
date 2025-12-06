@@ -37,14 +37,6 @@ export default function Navigation() {
               <div className="flex items-center">
                 <Logo />
               </div>
-              {isInPortal && (
-                <button
-                  onClick={() => setIsMinimized(true)}
-                  className="text-charcoal hover:text-primary font-medium text-sm"
-                >
-                  Minimize
-                </button>
-              )}
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
@@ -100,12 +92,21 @@ export default function Navigation() {
               <>
                 {user ? (
                   <>
-                    <Link
-                      href="/portal"
-                      className="bg-primary text-white px-5 py-2.5 rounded-md hover:bg-primary-700 transition-all text-sm font-medium"
-                    >
-                      Client Portal
-                    </Link>
+                    {isInPortal ? (
+                      <button
+                        onClick={() => setIsMinimized(true)}
+                        className="text-charcoal hover:text-primary font-medium text-sm transition-colors"
+                      >
+                        Minimize
+                      </button>
+                    ) : (
+                      <Link
+                        href="/portal"
+                        className="bg-primary text-white px-5 py-2.5 rounded-md hover:bg-primary-700 transition-all text-sm font-medium"
+                      >
+                        Client Portal
+                      </Link>
+                    )}
                     <a
                       href="/api/auth/logout"
                       className="text-charcoal hover:text-primary font-medium text-sm transition-colors"
