@@ -112,10 +112,10 @@ export default function Footer() {
               &copy; {new Date().getFullYear()} Foundry Wealth Group LLC. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <Link href="/terms" className="text-steel/90 hover:text-white transition-colors text-sm">
+              <Link href="/terms-of-service" className="text-steel/90 hover:text-white transition-colors text-sm">
                 Terms of Service
               </Link>
-              <Link href="/privacy" className="text-steel/90 hover:text-white transition-colors text-sm">
+              <Link href="/privacy-policy" className="text-steel/90 hover:text-white transition-colors text-sm">
                 Privacy Policy
               </Link>
             </div>
