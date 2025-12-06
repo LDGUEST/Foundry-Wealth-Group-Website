@@ -139,7 +139,9 @@ export default function Navigation() {
               )}
             </svg>
           </button>
-        </div>
+            </div>
+          </>
+        )}
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
