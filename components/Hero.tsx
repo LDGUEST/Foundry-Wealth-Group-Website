@@ -9,7 +9,7 @@ const Hero = () => {
       {/* Background Pattern Image */}
       <div className="absolute inset-0 z-0 opacity-30">
         <Image
-          src="/hero-background-pattern.png"
+          src="/hero-background-pattern-2.0.png"
           alt=""
           fill
           className="object-cover object-center"
