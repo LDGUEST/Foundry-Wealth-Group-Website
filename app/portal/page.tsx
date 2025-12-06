@@ -14,9 +14,20 @@ export default async function PortalDashboard() {
   }
 
   const auth0Id = session.user.sub;
-  const user = await getUser(auth0Id);
-  const completions = await getFormCompletions(auth0Id);
-  const documents = await getUserDocuments(auth0Id);
+  
+  // Handle database errors gracefully
+  let user = null;
+  let completions: any[] = [];
+  let documents: any[] = [];
+  
+  try {
+    user = await getUser(auth0Id);
+    completions = await getFormCompletions(auth0Id);
+    documents = await getUserDocuments(auth0Id);
+  } catch (error) {
+    console.error('Database error:', error);
+    // Continue with empty arrays if database fails
+  }
 
   const forms = [
     {

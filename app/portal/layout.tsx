@@ -14,8 +14,13 @@ export default async function PortalLayout({
     redirect('/api/auth/login?returnTo=/portal');
   }
 
-  // Sync user to database
-  await syncAuth0User();
+  // Sync user to database (fail silently if DB is not configured)
+  try {
+    await syncAuth0User();
+  } catch (error) {
+    console.error('Failed to sync user to database:', error);
+    // Continue rendering even if sync fails
+  }
 
   return (
     <div className="min-h-screen bg-[#FAF9F6]">
