@@ -81,6 +81,16 @@ export default function Footer() {
                   Code of Ethics
                 </Link>
               </li>
+              <li>
+                <a 
+                  href="/Foundry_Wealth_Group_ADV_Part_2A.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-steel/90 hover:text-white transition-colors text-sm block"
+                >
+                  Form ADV Part 2A
+                </a>
+              </li>
             </ul>
           </div>
         </div>
