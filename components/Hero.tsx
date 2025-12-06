@@ -23,9 +23,9 @@ const Hero = () => {
         <div className="inline-block bg-primary/10 text-primary font-semibold px-4 py-2 rounded-full text-sm">
           ✓ Independent Fiduciary RIA • Series 65 Licensed
         </div>
-        <h1 className="mt-6 text-4xl md:text-6xl font-bold text-charcoal tracking-tight">
-          Wealth Management for <br />
-          <span className="text-primary">Discerning Investors</span>
+        <h1 className="mt-6 text-3xl md:text-6xl font-bold text-charcoal tracking-tight">
+          Wealth Management <br className="md:hidden" />
+          <span className="text-primary">for Discerning Investors</span>
         </h1>
         <p className="mt-6 text-xl text-charcoal/70 leading-relaxed">
           Independent financial advisory built on fiduciary excellence and specialized expertise.
