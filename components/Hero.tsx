@@ -47,7 +47,6 @@ const Hero = () => {
           <a href="tel:612-512-7507" className="text-lg font-semibold text-primary">
             📞 (612) 512-7507
           </a>
-          <p className="text-xs text-charcoal/50 mt-1">Note: Phone number is a placeholder.</p>
         </div>
         <div className="mt-16 max-w-7xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-charcoal/80">
