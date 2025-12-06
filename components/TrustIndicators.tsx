@@ -18,7 +18,7 @@ const TrustIndicators = () => {
             <p className="text-md text-charcoal/60">Portfolio Management & Advisory</p>
           </div>
           <div className="p-4">
-            <h3 className="text-3xl font-bold text-primary">10</h3>
+            <h3 className="text-3xl font-bold text-primary">&gt;9</h3>
             <p className="mt-2 text-lg text-charcoal/70">Years Experience</p>
             <p className="text-md text-charcoal/60">Financial Markets & Economic Analysis</p>
           </div>
