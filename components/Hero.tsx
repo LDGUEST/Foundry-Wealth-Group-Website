@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import MeetingBookingButton from './MeetingBookingButton';
 
 const Hero = () => {
   return (
@@ -21,11 +22,7 @@ const Hero = () => {
           </p>
         </div>
         <div className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
-          <Link href="/contact" passHref>
-            <span className="inline-block w-full sm:w-auto bg-primary text-white px-8 py-4 rounded-md font-semibold text-lg cursor-pointer hover:bg-primary-600 transition-colors duration-300">
-              Schedule Discovery Meeting
-            </span>
-          </Link>
+          <MeetingBookingButton variant="primary" size="lg" />
           <Link href="/process" passHref>
             <span className="inline-block w-full sm:w-auto bg-transparent border-2 border-primary text-primary px-8 py-4 rounded-md font-semibold text-lg cursor-pointer hover:bg-primary/5 transition-colors duration-300">
               Learn About Our Approach

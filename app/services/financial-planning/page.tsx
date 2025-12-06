@@ -1,4 +1,5 @@
 import ContactForm from '@/components/ContactForm'
+import MeetingBookingButton from '@/components/MeetingBookingButton'
 
 export default function FinancialPlanning() {
   return (
@@ -12,6 +13,13 @@ export default function FinancialPlanning() {
           <p className="text-xl md:text-2xl text-charcoal/70 font-light max-w-3xl mx-auto">
             Comprehensive strategies to help you achieve your financial goals
           </p>
+        </div>
+      </section>
+
+      {/* Meeting Booking CTA */}
+      <section className="py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-offwhite">
+        <div className="max-w-7xl mx-auto text-center">
+          <MeetingBookingButton variant="primary" size="lg" />
         </div>
       </section>
 

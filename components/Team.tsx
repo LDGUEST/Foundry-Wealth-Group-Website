@@ -1,7 +1,7 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import { ChartBarIcon, CheckCircleIcon, BoltIcon } from '@heroicons/react/24/outline';
+import MeetingBookingButton from './MeetingBookingButton';
 
 const Team = () => {
   return (
@@ -84,11 +84,7 @@ const Team = () => {
         </div>
 
         <div className="mt-20 text-center">
-          <Link href="/contact" passHref>
-            <span className="inline-block bg-primary text-white px-8 py-4 rounded-md font-semibold text-lg cursor-pointer hover:bg-primary-600 transition-colors duration-300">
-              Schedule a Conversation
-            </span>
-          </Link>
+          <MeetingBookingButton variant="primary" size="lg" text="Schedule a Consultation" />
         </div>
       </div>
     </section>

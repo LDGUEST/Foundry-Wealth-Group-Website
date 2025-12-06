@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import MeetingBookingButton from '@/components/MeetingBookingButton'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -68,6 +69,17 @@ export default function Contact() {
           <p className="text-xl md:text-2xl text-charcoal/70 font-light max-w-3xl mx-auto">
             Schedule a consultation to discuss how Foundry Wealth Group can help you achieve your financial goals
           </p>
+        </div>
+      </section>
+
+      {/* Meeting Booking CTA Section */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-offwhite">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-charcoal mb-4">Ready to Get Started?</h2>
+          <p className="text-lg text-charcoal/70 mb-6">
+            Schedule a consultation to discuss your financial goals and learn how we can help.
+          </p>
+          <MeetingBookingButton variant="primary" size="lg" />
         </div>
       </section>
 
