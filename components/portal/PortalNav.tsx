@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useUser } from '@auth0/nextjs-auth0/client';
 import { FileText, Upload, User, Home } from 'lucide-react';
+import Logo from '@/components/Logo';
 
 const navItems = [
   { href: '/portal', label: 'Dashboard', icon: Home },
@@ -21,8 +22,8 @@ export function PortalNav() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-8">
-            <Link href="/portal" className="font-bold text-xl text-[#7A0026]">
-              Foundry Wealth
+            <Link href="/portal" className="flex items-center">
+              <Logo />
             </Link>
             
             <div className="hidden md:flex gap-6">

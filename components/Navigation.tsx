@@ -33,10 +33,17 @@ export default function Navigation() {
         ) : (
           <>
             <div className="flex justify-between items-center h-20">
-              {/* Logo */}
-              <div className="flex items-center">
-                <Logo />
-              </div>
+              {/* Logo - hidden when in portal since it's in PortalNav */}
+              {!isInPortal && (
+                <div className="flex items-center">
+                  <Logo />
+                </div>
+              )}
+              {isInPortal && (
+                <div className="flex items-center w-0">
+                  {/* Spacer to maintain layout */}
+                </div>
+              )}
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
