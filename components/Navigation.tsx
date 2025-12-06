@@ -73,14 +73,14 @@ export default function Navigation() {
                 {user ? (
                   <>
                     <Link
-                      href="/profile"
-                      className="text-charcoal hover:text-primary font-medium text-sm transition-colors"
+                      href="/portal"
+                      className="bg-primary text-white px-5 py-2.5 rounded-md hover:bg-primary-700 transition-all text-sm font-medium"
                     >
-                      Profile
+                      Client Portal
                     </Link>
                     <a
                       href="/api/auth/logout"
-                      className="bg-primary text-white px-5 py-2.5 rounded-md hover:bg-primary-700 transition-all text-sm font-medium"
+                      className="text-charcoal hover:text-primary font-medium text-sm transition-colors"
                     >
                       Logout
                     </a>
@@ -133,14 +133,16 @@ export default function Navigation() {
 
               <Link href="/testimonials" className="text-charcoal hover:text-primary font-medium text-sm">Testimonials</Link>
               <Link href="/contact" className="text-charcoal hover:text-primary font-medium text-sm">Contact</Link>
-              {!isLoading && user && (
-                <Link href="/profile" className="text-charcoal hover:text-primary font-medium text-sm">Profile</Link>
-              )}
               {!isLoading && (
                 user ? (
-                  <a href="/api/auth/logout" className="bg-primary text-white px-5 py-2.5 rounded-md hover:bg-primary-700 transition-all text-sm font-medium text-center">
-                    Logout
-                  </a>
+                  <>
+                    <Link href="/portal" className="bg-primary text-white px-5 py-2.5 rounded-md hover:bg-primary-700 transition-all text-sm font-medium text-center">
+                      Client Portal
+                    </Link>
+                    <a href="/api/auth/logout" className="text-charcoal hover:text-primary font-medium text-sm text-center">
+                      Logout
+                    </a>
+                  </>
                 ) : (
                   <a href="/api/auth/login" className="bg-primary text-white px-5 py-2.5 rounded-md hover:bg-primary-700 transition-all text-sm font-medium text-center">
                     Client Portal
