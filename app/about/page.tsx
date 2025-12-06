@@ -1,5 +1,6 @@
 import React from 'react';
 import Team from '@/components/Team';
+import Values from '@/components/Values';
 import Process from '@/components/Process';
 import ContactCTA from '@/components/ContactCTA';
 
@@ -18,6 +19,7 @@ const AboutPage = () => {
       </section>
 
       <Team />
+      <Values />
 
       <section className="py-24 bg-offwhite/80">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-lg text-charcoal/70 leading-relaxed space-y-8">

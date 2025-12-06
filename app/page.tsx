@@ -1,6 +1,5 @@
 import Hero from '@/components/Hero';
 import TrustIndicators from '@/components/TrustIndicators';
-import Values from '@/components/Values';
 import AboutPreview from '@/components/AboutPreview';
 import Services from '@/components/Services';
 import WhoWeServe from '@/components/WhoWeServe';
@@ -14,7 +13,6 @@ export default function Home() {
     <main>
       <Hero />
       <TrustIndicators />
-      <Values />
       <AboutPreview />
       <Services />
       <WhoWeServe />
