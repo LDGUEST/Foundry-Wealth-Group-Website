@@ -10,7 +10,15 @@ export default async function FormsPage() {
   }
 
   const auth0Id = session.user.sub;
-  const completions = await getFormCompletions(auth0Id);
+  
+  // Handle database errors gracefully
+  let completions: any[] = [];
+  try {
+    completions = await getFormCompletions(auth0Id);
+  } catch (error) {
+    console.error('Database error:', error);
+    // Continue with empty array if database fails
+  }
 
   const forms = [
     {
