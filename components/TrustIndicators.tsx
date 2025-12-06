@@ -11,7 +11,7 @@ const TrustIndicators = () => {
             Why Choose Foundry Wealth Group
           </h2>
         </div>
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-6 gap-8 text-center">
           <div className="p-4">
             <h3 className="text-3xl font-bold text-primary">2</h3>
             <p className="mt-2 text-lg text-charcoal/70">Years Experience</p>
@@ -21,6 +21,11 @@ const TrustIndicators = () => {
             <h3 className="text-3xl font-bold text-primary">&gt;9</h3>
             <p className="mt-2 text-lg text-charcoal/70">Years Experience</p>
             <p className="text-md text-charcoal/60">Financial Markets & Economic Analysis</p>
+          </div>
+          <div className="p-4">
+            <h3 className="text-3xl font-bold text-primary">8</h3>
+            <p className="mt-2 text-lg text-charcoal/70">Years in Finance Industry</p>
+            <p className="text-md text-charcoal/60">Comprehensive Experience</p>
           </div>
           <div className="p-4">
             <h3 className="text-3xl font-bold text-primary">100%</h3>
