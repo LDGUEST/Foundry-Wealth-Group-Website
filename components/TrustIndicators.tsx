@@ -65,27 +65,27 @@ const TrustIndicators = () => {
             </p>
 
             {/* Custodian Logos */}
-            <div className="flex flex-col md:flex-row items-center justify-center gap-16 md:gap-20 mb-10">
+            <div className="flex flex-row items-center justify-center gap-4 md:gap-20 mb-10">
               {/* Charles Schwab Logo */}
-              <div className="flex flex-col items-center">
-                <div className="bg-white p-8 rounded-lg border border-steel/20 shadow-sm w-64 h-32 flex items-center justify-center">
+              <div className="flex flex-col items-center flex-1 max-w-[280px] md:max-w-none">
+                <div className="bg-white p-4 md:p-8 rounded-lg border border-steel/20 shadow-sm w-full h-24 md:h-32 flex items-center justify-center">
                   <a 
                     href="https://advisorservices.schwab.com/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center justify-center"
                   >
-                    <span className="text-charcoal font-bold text-2xl tracking-tight">
+                    <span className="text-charcoal font-bold text-lg md:text-2xl tracking-tight">
                       Charles <span className="text-[#4A90E2]">Schwab</span>
                     </span>
                   </a>
                 </div>
-                <p className="text-base text-charcoal/70 mt-4 font-medium">Traditional Assets</p>
+                <p className="text-xs md:text-base text-charcoal/70 mt-2 md:mt-4 font-medium">Traditional Assets</p>
               </div>
 
               {/* Anchorage Digital Logo */}
-              <div className="flex flex-col items-center">
-                <div className="bg-charcoal p-8 rounded-lg border border-steel/20 shadow-sm w-64 h-32 flex items-center justify-center">
+              <div className="flex flex-col items-center flex-1 max-w-[280px] md:max-w-none">
+                <div className="bg-charcoal p-4 md:p-8 rounded-lg border border-steel/20 shadow-sm w-full h-24 md:h-32 flex items-center justify-center">
                   <a 
                     href="https://www.anchorage.com/" 
                     target="_blank" 
@@ -97,11 +97,11 @@ const TrustIndicators = () => {
                       alt="Anchorage Digital"
                       width={157}
                       height={36}
-                      className="object-contain"
+                      className="object-contain w-auto h-6 md:h-9"
                     />
                   </a>
                 </div>
-                <p className="text-base text-charcoal/70 mt-4 font-medium">Digital Assets</p>
+                <p className="text-xs md:text-base text-charcoal/70 mt-2 md:mt-4 font-medium">Digital Assets</p>
               </div>
             </div>
 
