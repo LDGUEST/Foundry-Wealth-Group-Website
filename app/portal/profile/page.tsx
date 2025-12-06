@@ -10,7 +10,15 @@ export default async function ProfilePage() {
   }
 
   const auth0Id = session.user.sub;
-  const user = await getUser(auth0Id);
+  
+  // Handle database errors gracefully
+  let user = null;
+  try {
+    user = await getUser(auth0Id);
+  } catch (error) {
+    console.error('Database error:', error);
+    // Continue with null user if database fails
+  }
 
   return (
     <div className="max-w-4xl mx-auto space-y-8">
