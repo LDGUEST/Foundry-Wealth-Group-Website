@@ -16,15 +16,22 @@ const navItems = [
 export function PortalNav() {
   const pathname = usePathname();
   const { user } = useUser();
+  
+  // Check if main nav is minimized by checking if we're in portal
+  // We'll show logo here when main nav is minimized
+  // For now, always show logo in portal nav - we'll refine based on main nav state if needed
+  const showLogoInPortalNav = true;
 
   return (
     <nav className="bg-white border-b border-gray-200">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-8">
-            <Link href="/portal" className="flex items-center">
-              <Logo />
-            </Link>
+            {showLogoInPortalNav && (
+              <Link href="/portal" className="flex items-center">
+                <Logo />
+              </Link>
+            )}
             
             <div className="hidden md:flex gap-6">
               {navItems.map(item => {

@@ -20,9 +20,9 @@ export default function Navigation() {
     <nav className={`border-b border-steel/20 sticky top-0 z-50 bg-white transition-all duration-300 ${isInPortal && isMinimized ? 'h-12' : 'h-auto'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {isInPortal && isMinimized ? (
-          // Minimized view - just logo and expand button
+          // Minimized view - just Menu button (logo is in PortalNav)
           <div className="flex justify-between items-center h-12">
-            <Logo />
+            <div></div>
             <button
               onClick={() => setIsMinimized(false)}
               className="text-charcoal hover:text-primary font-medium text-sm"
