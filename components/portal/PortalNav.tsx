@@ -62,6 +62,12 @@ export function PortalNav() {
                 {user.name || user.email}
               </div>
             )}
+            <Link
+              href="/"
+              className="bg-[#7A0026] text-white px-4 py-2 rounded-md font-medium text-sm hover:bg-[#7A0026]/90 transition-colors whitespace-nowrap"
+            >
+              Home
+            </Link>
             <a
               href="/api/auth/logout"
               className="text-sm text-gray-600 hover:text-gray-900 px-2 md:px-3 py-2 rounded-md hover:bg-gray-100 whitespace-nowrap"

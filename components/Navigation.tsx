@@ -1,23 +1,50 @@
 'use client'
 
 import { useUser } from '@auth0/nextjs-auth0/client'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { useState } from 'react'
 import Logo from './Logo'
 
 export default function Navigation() {
   const { user, isLoading } = useUser()
+  const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [whatWeDoOpen, setWhatWeDoOpen] = useState(false)
+  const [isMinimized, setIsMinimized] = useState(pathname?.startsWith('/portal') || false)
+
+  // Check if we're in portal
+  const isInPortal = pathname?.startsWith('/portal')
 
   return (
-    <nav className="border-b border-steel/20 sticky top-0 z-50 bg-white">
+    <nav className={`border-b border-steel/20 sticky top-0 z-50 bg-white transition-all duration-300 ${isInPortal && isMinimized ? 'h-12' : 'h-auto'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <div className="flex items-center">
+        {isInPortal && isMinimized ? (
+          // Minimized view - just logo and expand button
+          <div className="flex justify-between items-center h-12">
             <Logo />
+            <button
+              onClick={() => setIsMinimized(false)}
+              className="text-charcoal hover:text-primary font-medium text-sm"
+            >
+              Menu
+            </button>
           </div>
+        ) : (
+          <>
+            <div className="flex justify-between items-center h-20">
+              {/* Logo */}
+              <div className="flex items-center">
+                <Logo />
+              </div>
+              {isInPortal && (
+                <button
+                  onClick={() => setIsMinimized(true)}
+                  className="text-charcoal hover:text-primary font-medium text-sm"
+                >
+                  Minimize
+                </button>
+              )}
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
